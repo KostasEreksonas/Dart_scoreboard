@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
-# The software is distributer under a GPL v3.0 license.
+# The software is distributer under a GNU GPL v3.0 license.
+
+# version = 1.0
 
 # Variables
 set_1 = 0
