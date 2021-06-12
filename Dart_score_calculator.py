@@ -23,9 +23,9 @@ print("How many points for a leg: ")
 points = int(input())
 
 # Set the starting person of the match
-print("Who will start the game?")
-starting_player = str(input())
-while ((starting_player != player_1) or (starting_player != player_2)):
+while True:
+    print("Who will start the game?")
+    starting_player = str(input())
     if (starting_player == player_1):
         print("{} starts the game.".format(player_1))
         break
