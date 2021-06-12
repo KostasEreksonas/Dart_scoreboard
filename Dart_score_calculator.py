@@ -2,7 +2,7 @@
 
 # The software is distributer under a GNU GPL v3.0 license.
 
-# version = 1.0
+# version = 0.1
 
 # Variables
 set_1 = 0
@@ -37,6 +37,27 @@ while ((set_1 != sets) or (set_2 != sets)):
         points_1 -= points_scored_1
         print(points_1)
 
+    # Leg count for the first player
+    if (points_1 == 0):
+        leg_1 += 1
+        points_1 = points
+        points_2 = points
+        print("{} won the leg. ".format(player_1) + "The player won " + str(leg_1) + " legs and " + str(set_1) + " sets.")
+
+    # Set count for the first player
+    if (leg_1 == legs):
+        set_1 += 1
+        leg_1 = 0
+        leg_2 = 0
+        points_1 = points
+        points_2 = points
+        print("{} won the set. ".format(player_1) + "The player won " + str(leg_1) + " legs and " + str(set_1) + " sets.")
+
+    # Game win condition for the first player
+    if (set_1 == sets):
+        print("Player {} won the game.".format(player_1))
+        break
+
     # Point count for the second player
     print("How many points player {} scored: ".format(player_2))
     points_scored_2 = int(input())
@@ -46,26 +67,14 @@ while ((set_1 != sets) or (set_2 != sets)):
         points_2 -= points_scored_2
         print(points_2)
 
-    # Leg count
-    if (points_1 == 0):
-        leg_1 += 1
-        points_1 = points
-        points_2 = points
-        print("{} won the leg. ".format(player_1) + "The player won " + str(leg_1) + " legs and " + str(set_1) + " sets.")
+    # Leg count for the second player
     if (points_2 == 0):
         leg_2 += 1
         points_1 = points
         points_2 = points
         print("{} won the leg. ".format(player_2) + "The player won " + str(leg_2) + " legs and " + str(set_2) + " sets.")
 
-    # Set count
-    if (leg_1 == legs):
-        set_1 += 1
-        leg_1 = 0
-        leg_2 = 0
-        points_1 = points
-        points_2 = points
-        print("{} won the set. ".format(player_1) + "The player won " + str(leg_1) + " legs and " + str(set_1) + " sets.")
+    # Set count for the second player
     if (leg_2 == legs):
         set_2 += 1
         leg_1 = 0
@@ -74,10 +83,7 @@ while ((set_1 != sets) or (set_2 != sets)):
         points_2 = points
         print("{} won the set. ".format(player_2) + "The player won " + str(leg_2) + " legs and " + str(set_2) + " sets.")
 
-    # Game ending
-    if (set_1 == sets):
-        print("Player {} won the game.".format(player_1))
-        break
-    elif (set_2 == sets):
+    # Game win condition for the second player
+    if (set_2 == sets):
         print("Player {} won the game.".format(player_2))
         break
