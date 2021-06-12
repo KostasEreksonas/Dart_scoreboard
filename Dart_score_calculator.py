@@ -47,8 +47,10 @@ while ((set_1 != sets) or (set_2 != sets)):
         print("How many points player {} scored: ".format(player_1))
         points_scored_1 = int(input())
         if ((points_1 - points_scored_1) < 0) or ((points_1 - points_scored_1) == 1):
+            c = 2
             print("{} has ".format(player_1) + str(points_1) + " points left.")
         else:
+            c = 2
             points_1 -= points_scored_1
             print("{} has ".format(player_1) + str(points_1) + " points left.")
 
@@ -72,14 +74,15 @@ while ((set_1 != sets) or (set_2 != sets)):
         if (set_1 == sets):
             print("Player {} won the game.".format(player_1))
             break
-
-    elif (c == 2):
+    if (c == 2):
         # Point count for the second player
         print("How many points player {} scored: ".format(player_2))
         points_scored_2 = int(input())
         if ((points_2 - points_scored_2) < 0) or ((points_2 - points_scored_2) == 1):
+            c = 1
             print("{} has ".format(player_2) + str(points_2) + " points left.")
         else:
+            c = 1
             points_2 -= points_scored_2
             print("{} has ".format(player_2) + str(points_2) + " points left.")
 
