@@ -22,6 +22,19 @@ legs = int(input())
 print("How many points for a leg: ")
 points = int(input())
 
+# Set the starting person of the match
+print("Who will start the game?")
+starting_player = str(input())
+while ((starting_player != player_1) or (starting_player != player_2)):
+    if (starting_player == player_1):
+        print("{} starts the game.".format(player_1))
+        break
+    elif (starting_player == player_2):
+        print("{} starts the game.".format(player_2))
+        break
+    else:
+        print("Error! Please type again, who will start the game.")
+
 # Assign set points to both players
 points_1 = points
 points_2 = points
