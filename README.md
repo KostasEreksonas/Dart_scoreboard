@@ -1,3 +1,5 @@
+# Dart score calculator
+
 Table of Contents
 =================
 * [Dart score calculator program](Dart-score-calculator-program)
