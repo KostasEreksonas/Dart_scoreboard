@@ -2,6 +2,7 @@
 
 Table of Contents
 =================
+* [Dart score calculator](#Dart-score-calculator)
 * [Dart score calculator program](Dart-score-calculator-program)
 * [Further work](#Further-work)
 
