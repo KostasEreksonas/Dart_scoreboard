@@ -28,7 +28,7 @@ Features of this version are:
 
 Features of this version are:
 
-1. To be added when I will finish creating it.
+1. ***To be added when I will finish creating it.***
 
 # Further work
 Later I plan to create a GUI version of this dart score calculator using also Python.
