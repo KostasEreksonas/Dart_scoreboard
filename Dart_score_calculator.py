@@ -105,15 +105,28 @@ while ((set_1 != sets) or (set_2 != sets)):
         # Point count for the second player
         print("How many points player {} scored: ".format(player_2))
         points_scored_2 = int(input())
+        if (points_scored_2 >= 100) and (points_scored_2 < 140):
+            count_100_2 += 1
+        elif (points_scored_2 >= 140) and (points_scored_2 < 180):
+            count_140_2 += 1
+        elif (points_scored_2 == 180):
+            count_180_2 += 1
+
         # If player 2 scores more points that (s)he has left, point count does not change
         # Else scored points are deducted from what the player had before a dart throw
         if ((points_2 - points_scored_2) < 0) or ((points_2 - points_scored_2) == 1):
             c = 1
             print("{} has ".format(player_2) + str(points_2) + " points left.")
+            print("{} has ".format(player_2) + str(count_100_2) + " 100's scored.")
+            print("{} has ".format(player_2) + str(count_140_2) + " 140's scored.")
+            print("{} has ".format(player_2) + str(count_180_2) + " 180's scored.")
         else:
             c = 1
             points_2 -= points_scored_2
             print("{} has ".format(player_2) + str(points_2) + " points left.")
+            print("{} has ".format(player_2) + str(count_100_2) + " 100's scored.")
+            print("{} has ".format(player_2) + str(count_140_2) + " 140's scored.")
+            print("{} has ".format(player_2) + str(count_180_2) + " 180's scored.")
 
         # Leg count for the second player
         # If player 2 gets to 0 points and wins a leg, points of both players resets to whatever was set in the beginning.
