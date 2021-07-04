@@ -2,7 +2,8 @@
 
 # The software is distributer under a GNU GPL v3.0 license.
 
-# version = 0.1
+__version__ = 0.1
+__author__ = "Kostas Ereksonas"
 
 # Variables
 set_1 = 0       # Number of sets that player 1 won
