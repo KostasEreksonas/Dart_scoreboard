@@ -54,6 +54,8 @@ while ((set_1 != sets) or (set_2 != sets)):
         # Point count for the first player
         print("How many points player {} scored: ".format(player_1))
         points_scored_1 = int(input())
+
+        # Count occourences when player 1 scores 100-139, 140-179 and 180 points in a single 3-dart throw
         if (points_scored_1 >= 100) and (points_scored_1 < 140):
             count_100_1 += 1
         elif (points_scored_1 >= 140) and (points_scored_1 < 180):
@@ -63,6 +65,7 @@ while ((set_1 != sets) or (set_2 != sets)):
 
         # If player 1 scores more points that (s)he has left, point count does not change
         # Else scored points are deducted from what the player had before a dart throw
+        # Also print stats of player 1 scoring >100, >140 and 180 points in a single 3-dart throw
         if ((points_1 - points_scored_1) < 0) or ((points_1 - points_scored_1) == 1):
             c = 2
             print("{} has ".format(player_1) + str(points_1) + " points left.")
@@ -106,6 +109,8 @@ while ((set_1 != sets) or (set_2 != sets)):
         # Point count for the second player
         print("How many points player {} scored: ".format(player_2))
         points_scored_2 = int(input())
+
+        # Count occourences when player 2 scores 100-139, 140-179 and 180 points in a single 3-dart throw
         if (points_scored_2 >= 100) and (points_scored_2 < 140):
             count_100_2 += 1
         elif (points_scored_2 >= 140) and (points_scored_2 < 180):
@@ -115,6 +120,7 @@ while ((set_1 != sets) or (set_2 != sets)):
 
         # If player 2 scores more points that (s)he has left, point count does not change
         # Else scored points are deducted from what the player had before a dart throw
+        # Also print stats of player 2 scoring >100, >140 and 180 points in a single 3-dart throw
         if ((points_2 - points_scored_2) < 0) or ((points_2 - points_scored_2) == 1):
             c = 1
             print("{} has ".format(player_2) + str(points_2) + " points left.")
