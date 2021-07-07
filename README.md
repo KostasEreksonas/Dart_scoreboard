@@ -34,7 +34,7 @@ A sketch of how a finished GUI would look like is presented below:
 
 ![Sketch of a dart calculator's GUI](/img/score_calculator_GUI_sketch.png)
 
-Also I have added a [.drawio file for calculator's GUI scheme](/schemes/score_calculator_GUI_sketch.drawio) in a [scheme](/schemes/) folder.
+Also I have added a [.drawio file for calculator's GUI scheme](/schemes/score_calculator_GUI_sketch.drawio) in a [schemes](/schemes/) folder.
 
 # Further work
 Later I plan to create a GUI version of this dart score calculator using also Python.
