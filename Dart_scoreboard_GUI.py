@@ -33,6 +33,14 @@ class scoreboardUI(QMainWindow):
         # Create display
         self._createDisplay()
         self._namePlayer()
+        self._setsStats()
+        self._legsStats()
+        self._pointsStats()
+        self._100()
+        self._140()
+        self._180()
+        self._scoreMax()
+        self._scoreAverage()
 
     def _createDisplay(self):
         """Create the display."""
@@ -78,27 +86,251 @@ class scoreboardUI(QMainWindow):
 
     def _setsStats(self):
         """Displaying won sets statistics for both players."""
+        # Set layout for player name display line
+        self.namesLayout = QHBoxLayout()
+        # Create an instance of QLineEdit to put a name of player 1
+        self.name1 = QLineEdit()
+        # Set height of player 1 name field
+        self.name1.setFixedHeight(35)
+        # Set alignment of player 1's name
+        self.name1.setAlignment(Qt.AlignCenter)
+        # Set player 1's name field Read-Only
+        self.name1.setReadOnly(True)
+        # Add name of player 1
+        self.name1.setText("Player 1")          # Placeholder for now, will write a function for user input later
+        # Add name of player 1 to namesLayout
+        self.namesLayout.addWidget(self.name1)
+        # Create an instance of QLineEdit to put a name of player 2
+        self.name2 = QLineEdit()
+        # Set height of player 2 name field
+        self.name2.setFixedHeight(35)
+        # Set alignment of player 2's name
+        self.name2.setAlignment(Qt.AlignCenter)
+        # Set player 2's name field Read-Only
+        self.name2.setReadOnly(True)
+        # Add name of player 2
+        self.name2.setText("Player 2")          # Same as for player 1
+        # Add name of player 2 to namesLayout
+        self.namesLayout.addWidget(self.name2)
+        # Add player names to the general layout
+        self.generalLayout.addLayout(self.namesLayout)
 
     def _legsStats(self):
         """Displaying won legs statistics for both players."""
+        # Set layout for player name display line
+        self.namesLayout = QHBoxLayout()
+        # Create an instance of QLineEdit to put a name of player 1
+        self.name1 = QLineEdit()
+        # Set height of player 1 name field
+        self.name1.setFixedHeight(35)
+        # Set alignment of player 1's name
+        self.name1.setAlignment(Qt.AlignCenter)
+        # Set player 1's name field Read-Only
+        self.name1.setReadOnly(True)
+        # Add name of player 1
+        self.name1.setText("Player 1")          # Placeholder for now, will write a function for user input later
+        # Add name of player 1 to namesLayout
+        self.namesLayout.addWidget(self.name1)
+        # Create an instance of QLineEdit to put a name of player 2
+        self.name2 = QLineEdit()
+        # Set height of player 2 name field
+        self.name2.setFixedHeight(35)
+        # Set alignment of player 2's name
+        self.name2.setAlignment(Qt.AlignCenter)
+        # Set player 2's name field Read-Only
+        self.name2.setReadOnly(True)
+        # Add name of player 2
+        self.name2.setText("Player 2")          # Same as for player 1
+        # Add name of player 2 to namesLayout
+        self.namesLayout.addWidget(self.name2)
+        # Add player names to the general layout
+        self.generalLayout.addLayout(self.namesLayout)
 
     def _pointsStats(self):
         """Displaying  points left in a leg for both players."""
+        # Set layout for player name display line
+        self.namesLayout = QHBoxLayout()
+        # Create an instance of QLineEdit to put a name of player 1
+        self.name1 = QLineEdit()
+        # Set height of player 1 name field
+        self.name1.setFixedHeight(35)
+        # Set alignment of player 1's name
+        self.name1.setAlignment(Qt.AlignCenter)
+        # Set player 1's name field Read-Only
+        self.name1.setReadOnly(True)
+        # Add name of player 1
+        self.name1.setText("Player 1")          # Placeholder for now, will write a function for user input later
+        # Add name of player 1 to namesLayout
+        self.namesLayout.addWidget(self.name1)
+        # Create an instance of QLineEdit to put a name of player 2
+        self.name2 = QLineEdit()
+        # Set height of player 2 name field
+        self.name2.setFixedHeight(35)
+        # Set alignment of player 2's name
+        self.name2.setAlignment(Qt.AlignCenter)
+        # Set player 2's name field Read-Only
+        self.name2.setReadOnly(True)
+        # Add name of player 2
+        self.name2.setText("Player 2")          # Same as for player 1
+        # Add name of player 2 to namesLayout
+        self.namesLayout.addWidget(self.name2)
+        # Add player names to the general layout
+        self.generalLayout.addLayout(self.namesLayout)
 
     def _100(self):
         """Displaying a number of scored 100+ point 3-dart throws."""
+        # Set layout for player name display line
+        self.namesLayout = QHBoxLayout()
+        # Create an instance of QLineEdit to put a name of player 1
+        self.name1 = QLineEdit()
+        # Set height of player 1 name field
+        self.name1.setFixedHeight(35)
+        # Set alignment of player 1's name
+        self.name1.setAlignment(Qt.AlignCenter)
+        # Set player 1's name field Read-Only
+        self.name1.setReadOnly(True)
+        # Add name of player 1
+        self.name1.setText("Player 1")          # Placeholder for now, will write a function for user input later
+        # Add name of player 1 to namesLayout
+        self.namesLayout.addWidget(self.name1)
+        # Create an instance of QLineEdit to put a name of player 2
+        self.name2 = QLineEdit()
+        # Set height of player 2 name field
+        self.name2.setFixedHeight(35)
+        # Set alignment of player 2's name
+        self.name2.setAlignment(Qt.AlignCenter)
+        # Set player 2's name field Read-Only
+        self.name2.setReadOnly(True)
+        # Add name of player 2
+        self.name2.setText("Player 2")          # Same as for player 1
+        # Add name of player 2 to namesLayout
+        self.namesLayout.addWidget(self.name2)
+        # Add player names to the general layout
+        self.generalLayout.addLayout(self.namesLayout)
 
     def _140(self):
         """Displaying a number of scored 140+ point 3-dart throws."""
+        # Set layout for player name display line
+        self.namesLayout = QHBoxLayout()
+        # Create an instance of QLineEdit to put a name of player 1
+        self.name1 = QLineEdit()
+        # Set height of player 1 name field
+        self.name1.setFixedHeight(35)
+        # Set alignment of player 1's name
+        self.name1.setAlignment(Qt.AlignCenter)
+        # Set player 1's name field Read-Only
+        self.name1.setReadOnly(True)
+        # Add name of player 1
+        self.name1.setText("Player 1")          # Placeholder for now, will write a function for user input later
+        # Add name of player 1 to namesLayout
+        self.namesLayout.addWidget(self.name1)
+        # Create an instance of QLineEdit to put a name of player 2
+        self.name2 = QLineEdit()
+        # Set height of player 2 name field
+        self.name2.setFixedHeight(35)
+        # Set alignment of player 2's name
+        self.name2.setAlignment(Qt.AlignCenter)
+        # Set player 2's name field Read-Only
+        self.name2.setReadOnly(True)
+        # Add name of player 2
+        self.name2.setText("Player 2")          # Same as for player 1
+        # Add name of player 2 to namesLayout
+        self.namesLayout.addWidget(self.name2)
+        # Add player names to the general layout
+        self.generalLayout.addLayout(self.namesLayout)
 
     def _180(self):
         """Displaying a number of scored 180 point 3-dart throws."""
+        # Set layout for player name display line
+        self.namesLayout = QHBoxLayout()
+        # Create an instance of QLineEdit to put a name of player 1
+        self.name1 = QLineEdit()
+        # Set height of player 1 name field
+        self.name1.setFixedHeight(35)
+        # Set alignment of player 1's name
+        self.name1.setAlignment(Qt.AlignCenter)
+        # Set player 1's name field Read-Only
+        self.name1.setReadOnly(True)
+        # Add name of player 1
+        self.name1.setText("Player 1")          # Placeholder for now, will write a function for user input later
+        # Add name of player 1 to namesLayout
+        self.namesLayout.addWidget(self.name1)
+        # Create an instance of QLineEdit to put a name of player 2
+        self.name2 = QLineEdit()
+        # Set height of player 2 name field
+        self.name2.setFixedHeight(35)
+        # Set alignment of player 2's name
+        self.name2.setAlignment(Qt.AlignCenter)
+        # Set player 2's name field Read-Only
+        self.name2.setReadOnly(True)
+        # Add name of player 2
+        self.name2.setText("Player 2")          # Same as for player 1
+        # Add name of player 2 to namesLayout
+        self.namesLayout.addWidget(self.name2)
+        # Add player names to the general layout
+        self.generalLayout.addLayout(self.namesLayout)
 
     def _scoreMax(self):
         """Displaying the best score of a 3-dart throw."""
+        # Set layout for player name display line
+        self.namesLayout = QHBoxLayout()
+        # Create an instance of QLineEdit to put a name of player 1
+        self.name1 = QLineEdit()
+        # Set height of player 1 name field
+        self.name1.setFixedHeight(35)
+        # Set alignment of player 1's name
+        self.name1.setAlignment(Qt.AlignCenter)
+        # Set player 1's name field Read-Only
+        self.name1.setReadOnly(True)
+        # Add name of player 1
+        self.name1.setText("Player 1")          # Placeholder for now, will write a function for user input later
+        # Add name of player 1 to namesLayout
+        self.namesLayout.addWidget(self.name1)
+        # Create an instance of QLineEdit to put a name of player 2
+        self.name2 = QLineEdit()
+        # Set height of player 2 name field
+        self.name2.setFixedHeight(35)
+        # Set alignment of player 2's name
+        self.name2.setAlignment(Qt.AlignCenter)
+        # Set player 2's name field Read-Only
+        self.name2.setReadOnly(True)
+        # Add name of player 2
+        self.name2.setText("Player 2")          # Same as for player 1
+        # Add name of player 2 to namesLayout
+        self.namesLayout.addWidget(self.name2)
+        # Add player names to the general layout
+        self.generalLayout.addLayout(self.namesLayout)
 
     def _scoreAverage(self):
         """Displaying the average score of a 3-dart throw."""
+        # Set layout for player name display line
+        self.namesLayout = QHBoxLayout()
+        # Create an instance of QLineEdit to put a name of player 1
+        self.name1 = QLineEdit()
+        # Set height of player 1 name field
+        self.name1.setFixedHeight(35)
+        # Set alignment of player 1's name
+        self.name1.setAlignment(Qt.AlignCenter)
+        # Set player 1's name field Read-Only
+        self.name1.setReadOnly(True)
+        # Add name of player 1
+        self.name1.setText("Player 1")          # Placeholder for now, will write a function for user input later
+        # Add name of player 1 to namesLayout
+        self.namesLayout.addWidget(self.name1)
+        # Create an instance of QLineEdit to put a name of player 2
+        self.name2 = QLineEdit()
+        # Set height of player 2 name field
+        self.name2.setFixedHeight(35)
+        # Set alignment of player 2's name
+        self.name2.setAlignment(Qt.AlignCenter)
+        # Set player 2's name field Read-Only
+        self.name2.setReadOnly(True)
+        # Add name of player 2
+        self.name2.setText("Player 2")          # Same as for player 1
+        # Add name of player 2 to namesLayout
+        self.namesLayout.addWidget(self.name2)
+        # Add player names to the general layout
+        self.generalLayout.addLayout(self.namesLayout)
 
 
 class Dialog(QDialog):
