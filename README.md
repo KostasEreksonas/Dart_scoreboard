@@ -28,7 +28,7 @@ Features of this version are:
 
 Features of this version are:
 
-1 A comprehensible GUI for counting stats of a darts game.
+1. A comprehensible GUI for counting stats of a darts game.
 
 A sketch of how a finished GUI would look like is presented below:
 
