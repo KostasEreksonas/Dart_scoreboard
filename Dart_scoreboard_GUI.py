@@ -333,6 +333,12 @@ class scoreboardUI(QMainWindow):
         self.generalLayout.addLayout(self.namesLayout)
 
 
+class scoreboardCtrl:
+    """Class for controlling actions for the scoreboard."""
+    def __init__(self):
+        """Initialization of the controller mechanism."""
+
+
 class Dialog(QDialog):
     """Dialog window of dart scoreboard."""
     def __init__(self):
