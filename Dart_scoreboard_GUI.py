@@ -84,10 +84,10 @@ class scoreboardUI(QMainWindow):
     def _pointsStats(self):
         """Displaying  points left in a leg for both players."""
 
-    def _100+(self):
+    def _100(self):
         """Displaying a number of scored 100+ point 3-dart throws."""
 
-    def _140+(self):
+    def _140(self):
         """Displaying a number of scored 140+ point 3-dart throws."""
 
     def _180(self):
