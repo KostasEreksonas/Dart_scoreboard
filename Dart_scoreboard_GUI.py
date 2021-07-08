@@ -54,12 +54,24 @@ class scoreboardUI(QMainWindow):
         self.namesLayout.addWidget(self.name1)
         # Create an instance of QLineEdit to put a name of player 2
         self.name2 = QLineEdit()
+        # Set height of player 1 name field
+        self.name1.setFixedHeight(35)
+        # Set alignment of player 1's name
+        self.name1.setAlignment(Qt.AlignCenter)
+        # Set player 1's name field Read-Only
+        self.name1.setReadOnly(True)
+        # Add name of player 1
+        self.name1.setText("Player 1")
         # Add name of player 2 to namesLayout
         self.namesLayout.addWidget(self.name2)
-        self.name1.setFixedHeight(35)
+        # Set height of player 2 name field
         self.name2.setFixedHeight(35)
-        self.display.setAlignment(Qt.AlignCenter)
-        self.display.setReadOnly(True)
+        # Set alignment of player 2's name
+        self.name2.setAlignment(Qt.AlignCenter)
+        # Set player 2's name field Read-Only
+        self.name2.setReadOnly(True)
+        # Add name of player 2
+        self.name2.setText("Player 2")
         # Add player names to the general layout
         self.generalLayout.addLayout(self.namesLayout)
 
