@@ -10,6 +10,7 @@ import sys
 # Import needed PyQt5 widgets for creating a dart score calculator program's graphical user interface
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication
+from PyQt5.QtWidgets import QDialog
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QLineEdit
 from PyQt5.QtWidgets import QGridLayout
@@ -98,6 +99,20 @@ class scoreboardUI(QMainWindow):
 
     def _scoreAverage(self):
         """Displaying the average score of a 3-dart throw."""
+
+
+class Dialog(QDialog):
+    """Dialog window of dart scoreboard."""
+    def __init__(self):
+        super().__init__()
+        # Set properties of main window
+        self.setWindowTitle('User input')
+        self.setFixedSize(400, 400) # Just a placeholder values for now
+        # Set the central widget and general layout
+        self.generalLayout = QVBoxLayout()
+        self._centralWidget = QWidget(self)
+        self.setCentralWidget(self._centralWidget)
+        self._centralWidget.setLayout(self.generalLayout)
 
 # Main function
 def main():
