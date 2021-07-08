@@ -36,5 +36,11 @@ A sketch of how a finished GUI would look like is presented below:
 
 Also I have added a [.drawio file for calculator's GUI scheme](/schemes/score_calculator_GUI_sketch.drawio) in a [schemes](/schemes/) folder.
 
+Next is the sketch of a ***Dialog*** window, which is used for collecting user input and data about the darts game. It is presented below:
+
+![Sketch of a dialog for user input](/img/score_calculator_Dialog_sketch.png)
+
+Also I have added a [.drawio file for calculator's Dialog scheme](/schemes/score_calculator_Dialog_sketch.drawio) in a [schemes](/schemes/) folder.
+
 # Further work
 Later I plan to create a GUI version of this dart score calculator using also Python.
