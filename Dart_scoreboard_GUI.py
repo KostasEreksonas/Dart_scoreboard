@@ -14,6 +14,7 @@ from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QLineEdit
 from PyQt5.QtWidgets import QGridLayout
 from PyQt5.QtWidgets import QVBoxLayout
+from PyQt5.QtWidgets import QHBoxLayout
 from PyQt5.QtWidgets import QWidget
 
 class scoreboardUI(QMainWindow):
@@ -30,6 +31,7 @@ class scoreboardUI(QMainWindow):
         self._centralWidget.setLayout(self.generalLayout)
         # Create display
         self._createDisplay()
+        self._namePlayer()
 
     def _createDisplay(self):
         """Create the display."""
@@ -37,10 +39,29 @@ class scoreboardUI(QMainWindow):
         self.display = QLineEdit()
         # Set properties of the display
         self.display.setFixedHeight(35)
-        self.display.setAlignment(Qt.AlignRight)
+        self.display.setAlignment(Qt.AlignCenter)
         self.display.setReadOnly(True)
+        self.display.setText("Dart scoreboard")
         # Add the display to the general layout
         self.generalLayout.addWidget(self.display)
+
+    def _namePlayer(self):
+        # Set layout for player name display line
+        self.namesLayout = QHBoxLayout()
+        # Create an instance of QLineEdit to put a name of player 1
+        self.name1 = QLineEdit()
+        # Add name of player 1 to namesLayout
+        self.namesLayout.addWidget(self.name1)
+        # Create an instance of QLineEdit to put a name of player 2
+        self.name2 = QLineEdit()
+        # Add name of player 2 to namesLayout
+        self.namesLayout.addWidget(self.name2)
+        self.name1.setFixedHeight(35)
+        self.name2.setFixedHeight(35)
+        self.display.setAlignment(Qt.AlignCenter)
+        self.display.setReadOnly(True)
+        # Add player names to the general layout
+        self.generalLayout.addWidget(self.namesLayout)
 
 # Main function
 def main():
