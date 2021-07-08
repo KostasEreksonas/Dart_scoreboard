@@ -61,7 +61,7 @@ class scoreboardUI(QMainWindow):
         self.display.setAlignment(Qt.AlignCenter)
         self.display.setReadOnly(True)
         # Add player names to the general layout
-        self.generalLayout.addWidget(self.namesLayout)
+        self.generalLayout.addLayout(self.namesLayout)
 
 # Main function
 def main():
