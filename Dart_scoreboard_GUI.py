@@ -61,7 +61,7 @@ class scoreboardUI(QMainWindow):
         # Set player 1's name field Read-Only
         self.name1.setReadOnly(True)
         # Add name of player 1
-        self.name1.setText("Player 1")
+        self.name1.setText("Player 1")          # Placeholder for now, will write a function for user input later
         # Add name of player 2 to namesLayout
         self.namesLayout.addWidget(self.name2)
         # Set height of player 2 name field
@@ -71,7 +71,7 @@ class scoreboardUI(QMainWindow):
         # Set player 2's name field Read-Only
         self.name2.setReadOnly(True)
         # Add name of player 2
-        self.name2.setText("Player 2")
+        self.name2.setText("Player 2")          # Same as for player 1
         # Add player names to the general layout
         self.generalLayout.addLayout(self.namesLayout)
 
