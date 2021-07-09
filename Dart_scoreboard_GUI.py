@@ -11,6 +11,7 @@ import sys
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QDialog
+from PyQt5.QtWidgets import QLabel
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QLineEdit
 from PyQt5.QtWidgets import QGridLayout
@@ -341,12 +342,69 @@ class Dialog(QDialog):
         self._centralWidget = QWidget(self)
         self.setCentralWidget(self._centralWidget)
         self._centralWidget.setLayout(self.generalLayout)
+        # Placed functions for user input fields and buttons
+        self._userInput()
+        self._dialogButtons()
 
     def _userInput(self):
         """Function for collecting user inputted data."""
+        # Set layout of user input fields
+        self.inputFields = QVBoxLayout()
+        # Set layout of first user input field
+        self.inputField1 = QHBoxLayout()
+        # Set text of the first user input field
+        self.inputField1_Text = QLabel()
+        self.inputField1_Text.setText("Input name of the first player")
+        # Add text widget to first input field layout
+        self.inputField1.addWidget(self.inputField1_Text)
+        # Add a box for entering data for the first user input field
+        self.inputField1_Data = QLineEdit()
+        # Add the box to the first input field's layout
+        self.inputField1.addWidget(self.inputField1_Data)
+        # Add first input field to inputFields layout
+        self.inputFields.addLayout(self.inputField1)
+        # Same process repeated for the second field (might offload to a different function later on)
+        self.inputField2 = QHBoxLayout()
+        self.inputField2_Text = QLabel()
+        self.inputField2_Text.setText("Input name of the second player")
+        self.inputField2.addWidget(self.inputField2_Text)
+        self.inputField2_Data = QLineEdit()
+        self.inputField2.addWidget(self.inputField2_Data)
+        self.inputFields.addLayout(self.inputField2)
+        # Same process repeated for the set count field (might offload to a different function later on)
+        self.inputField3 = QHBoxLayout()
+        self.inputField3_Text = QLabel()
+        self.inputField3_Text.setText("How many sets to play")
+        self.inputField3.addWidget(self.inputField3_Text)
+        self.inputField3_Data = QLineEdit()
+        self.inputField3.addWidget(self.inputField3_Data)
+        self.inputFields.addLayout(self.inputField3)
+        # Same process repeated for the leg count field (might offload to a different function later on)
+        self.inputField4 = QHBoxLayout()
+        self.inputField4_Text = QLabel()
+        self.inputField4_Text.setText("How many legs to play")
+        self.inputField4.addWidget(self.inputField4_Text)
+        self.inputField4_Data = QLineEdit()
+        self.inputField4.addWidget(self.inputField4_Data)
+        self.inputFields.addLayout(self.inputField4)
+        # Same process repeated for the point count field (might offload to a different function later on)
+        self.inputField5 = QHBoxLayout()
+        self.inputField5_Text = QLabel()
+        self.inputField5_Text.setText("How many points to win a leg")
+        self.inputField5.addWidget(self.inputField5_Text)
+        self.inputField5_Data = QLineEdit()
+        self.inputField5.addWidget(self.inputField5_Data)
+        self.inputFields.addLayout(self.inputField5)
+        # Add input fields to the general layout
+        self.generalLayout.addLayout(self.inputFields)
 
     def _dialogButtons(self):
         """Function for adding buttons to dialog."""
+        QBtn = QDialogButtonBox.Ok | QDialogButtonBox.Cancel
+        self.buttonBox = QDialogButtonBox(QBtn)
+        self.buttonBox.accepted.connect(self.accept)
+        self.buttonBox.rejected.connect(self.reject)
+        self.generalLayout.addWidget(self.buttonBox)
 
 # Main function
 def main():
