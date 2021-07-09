@@ -342,6 +342,12 @@ class Dialog(QDialog):
         self.setCentralWidget(self._centralWidget)
         self._centralWidget.setLayout(self.generalLayout)
 
+    def _userInput(self):
+        """Function for collecting user inputted data."""
+
+    def _dialogButtons(self):
+        """Function for adding buttons to dialog."""
+
 # Main function
 def main():
     """Main function."""
