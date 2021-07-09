@@ -30,8 +30,8 @@ class scoreboardUI(QMainWindow):
         self._centralWidget = QWidget(self)
         self.setCentralWidget(self._centralWidget)
         self._centralWidget.setLayout(self.generalLayout)
-        # Create display
-        self._createDisplay()
+        # Defined functions of various elements of the scorebard's GUI
+        self._createHeading()
         self._namePlayer()
         self._setsStats()
         self._legsStats()
@@ -43,17 +43,17 @@ class scoreboardUI(QMainWindow):
         self._scoreMax()
         self._scoreAverage()
 
-    def _createDisplay(self):
-        """Create the display."""
-        # Create the display widget
-        self.display = QLineEdit()
-        # Set properties of the display
-        self.display.setFixedHeight(35)
-        self.display.setAlignment(Qt.AlignCenter)
-        self.display.setReadOnly(True)
-        self.display.setText("Dart scoreboard")
-        # Add the display to the general layout
-        self.generalLayout.addWidget(self.display)
+    def _createHeading(self):
+        """Create the Heading of the scoreboard."""
+        # Create the heading widget
+        self.heading = QLineEdit()
+        # Set properties of the heading - fixed height, alignment, heading text and make it read-only
+        self.heading.setFixedHeight(35)
+        self.heading.setAlignment(Qt.AlignCenter)
+        self.heading.setText("Dart scoreboard")
+        self.heading.setReadOnly(True)
+        # Add the heading to the general layout
+        self.generalLayout.addWidget(self.heading)
 
     def _namePlayer(self):
         """Display names of a dart match players."""
