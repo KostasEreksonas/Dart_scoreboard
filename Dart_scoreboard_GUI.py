@@ -11,6 +11,8 @@ import sys
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QDialog
+from PyQt5.QtWidgets import QDialogButtonBox
+from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtWidgets import QLabel
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QLineEdit
@@ -43,6 +45,7 @@ class scoreboardUI(QMainWindow):
         self._180()
         self._scoreMax()
         self._scoreAverage()
+        self._createButtons()
 
     def _createHeading(self):
         """Create the Heading of the scoreboard."""
@@ -193,6 +196,7 @@ class scoreboardUI(QMainWindow):
         self.scoredName.setFixedHeight(35)
         self.scoredName.setAlignment(Qt.AlignCenter)
         self.scoredName.setReadOnly(True)
+        self.scoredName.setText("Points scored")
         self.scoredLayout.addWidget(self.scoredName)
         self.scored1 = QLineEdit()
         self.scored1.setFixedHeight(35)
@@ -323,6 +327,17 @@ class scoreboardUI(QMainWindow):
         self.averageLayout.addWidget(self.average2)
         self.generalLayout.addLayout(self.averageLayout)
 
+    def _createButtons(self):
+        """Create a button for opening a Dialog window."""
+        self.dialogOpen = QPushButton()
+        self.dialogOpen.setText("Start game")
+        self.dialogOpen.clicked.connect(self._callDialog)
+        self.generalLayout.addWidget(self.dialogOpen)
+
+    def _callDialog(self):
+        """Function to call Dialog window class."""
+        self.dialogWindow = Dialog().exec_()
+
 
 class scoreboardCtrl:
     """Class for controlling actions for the scoreboard."""
@@ -340,7 +355,6 @@ class Dialog(QDialog):
         # Set the central widget and general layout
         self.generalLayout = QVBoxLayout()
         self._centralWidget = QWidget(self)
-        self.setCentralWidget(self._centralWidget)
         self._centralWidget.setLayout(self.generalLayout)
         # Placed functions for user input fields and buttons
         self._userInput()
