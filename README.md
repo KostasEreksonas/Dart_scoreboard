@@ -43,4 +43,4 @@ Next is the sketch of a ***Dialog*** window, which is used for collecting user i
 Also I have added a [.drawio file for calculator's Dialog scheme](/schemes/score_calculator_Dialog_sketch.drawio) in a [schemes](/schemes/) folder.
 
 # Further work
-Later I plan to create a GUI version of this dart score calculator using also Python.
+Later I plan to update a GUI version of this dart score calculator and maybe implement some additional functionality.
