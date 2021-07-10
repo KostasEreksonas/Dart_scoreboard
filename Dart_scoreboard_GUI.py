@@ -374,6 +374,8 @@ class scoreboardUI(QMainWindow):
         """Function to call Dialog window class."""
         self.dialogWindow = Dialog().exec_()
 
+"""Functions for counting scores and statistics"""
+    #def 
 
 class Dialog(QDialog):
     """Dialog window of dart scoreboard."""
@@ -464,13 +466,13 @@ class Dialog(QDialog):
     def _setName1(self):
         """Set name of Player 1."""
         player_1 = self.inputField1_Data.text()
-        self.UI._namePlayer.name1.setText("{}".format(player_1))
+        self.UI._namePlayer()
         print(player_1)
 
     def _setName2(self):
         """Set name of Player 2."""
         player_2 = self.inputField2_Data.text()
-        self.UI._namePlayer.name2.setText("{}".format(player_2))
+        self.UI._namePlayer()
         print(player_2)
 
     def _setSets(self):
