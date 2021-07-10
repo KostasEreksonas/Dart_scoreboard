@@ -4,9 +4,10 @@ Table of Contents
 =================
 * [Dart score calculator](#Dart-score-calculator)
 * [Dart score calculator program](Dart-score-calculator-program)
-* [Further work](#Further-work)
 * [CLI version](#CLI_version)
 * [GUI version](#GUI_version)
+* [What to fix](#What-to-fix)
+* [Further work](#Further-work)
 
 # Dart score calculator program
 
