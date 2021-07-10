@@ -375,7 +375,7 @@ class scoreboardUI(QMainWindow):
         self.dialogWindow = Dialog().exec_()
 
 """Functions for counting scores and statistics"""
-    #def 
+    #def
 
 class Dialog(QDialog):
     """Dialog window of dart scoreboard."""
@@ -383,7 +383,7 @@ class Dialog(QDialog):
         super().__init__()
         # Set properties of main window
         self.setWindowTitle('User input')
-        self.setFixedSize(300, 180) # Just a placeholder values for now
+        self.setFixedSize(300, 180)
         # Set the central widget and general layout
         self.generalLayout = QVBoxLayout()
         self._centralWidget = QWidget(self)
