@@ -355,12 +355,6 @@ class scoreboardUI(QMainWindow):
         self.dialogWindow = Dialog().exec_()
 
 
-class scoreboardCtrl:
-    """Class for controlling actions for the scoreboard."""
-    def __init__(self):
-        """Initialization of the controller mechanism."""
-
-
 class Dialog(QDialog):
     """Dialog window of dart scoreboard."""
     def __init__(self):
@@ -441,6 +435,10 @@ class Dialog(QDialog):
         self.buttonBox.accepted.connect(self.accept)
         self.buttonBox.rejected.connect(self.reject)
         self.generalLayout.addWidget(self.buttonBox)
+
+    def _setName1(self):
+        """Set name of Player 1."""
+
 
 # Main function
 def main():
