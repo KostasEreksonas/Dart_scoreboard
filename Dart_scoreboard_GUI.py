@@ -23,6 +23,20 @@ from PyQt5.QtWidgets import QVBoxLayout
 from PyQt5.QtWidgets import QHBoxLayout
 from PyQt5.QtWidgets import QWidget
 
+# Variable list (copied from CLI version of the scoreboard)
+set_1 = 0       # Number of sets that player 1 won
+set_2 = 0       # Number of sets that player 2 won
+leg_1 = 0       # Number of legs that player 1 won
+leg_2 = 0       # Number of legs that player 2 won
+points_1 = 0    # Number of points that player 1 scored
+points_2 = 0    # Number of points that player 2 scored
+count_100_1 = 0 # Count instances when player 1 scored more than 100 points during single 3-dart throw
+count_140_1 = 0 # Count instances when player 1 scored more than 140 points during single 3-dart throw
+count_180_1 = 0 # Count instances when player 1 scored more than 180 points during single 3-dart throw
+count_100_2 = 0 # Count instances when player 2 scored more than 100 points during single 3-dart throw
+count_140_2 = 0 # Count instances when player 2 scored more than 140 points during single 3-dart throw
+count_180_2 = 0 # Count instances when player 2 scored more than 180 points during single 3-dart throw
+
 class scoreboardUI(QMainWindow):
     """Main window of dart scoreboard."""
     def __init__(self):
