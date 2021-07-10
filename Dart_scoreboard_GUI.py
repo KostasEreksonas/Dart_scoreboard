@@ -351,7 +351,7 @@ class Dialog(QDialog):
         super().__init__()
         # Set properties of main window
         self.setWindowTitle('User input')
-        self.setFixedSize(400, 400) # Just a placeholder values for now
+        self.setFixedSize(300, 180) # Just a placeholder values for now
         # Set the central widget and general layout
         self.generalLayout = QVBoxLayout()
         self._centralWidget = QWidget(self)
@@ -369,6 +369,8 @@ class Dialog(QDialog):
         # Set text of the first user input field
         self.inputField1_Text = QLabel()
         self.inputField1_Text.setText("Input name of the first player")
+        # Set alignment of the first input filed's text
+        self.inputField1_Text.setAlignment(Qt.AlignCenter)
         # Add text widget to first input field layout
         self.inputField1.addWidget(self.inputField1_Text)
         # Add a box for entering data for the first user input field
@@ -381,6 +383,7 @@ class Dialog(QDialog):
         self.inputField2 = QHBoxLayout()
         self.inputField2_Text = QLabel()
         self.inputField2_Text.setText("Input name of the second player")
+        self.inputField2_Text.setAlignment(Qt.AlignCenter)
         self.inputField2.addWidget(self.inputField2_Text)
         self.inputField2_Data = QLineEdit()
         self.inputField2.addWidget(self.inputField2_Data)
@@ -389,6 +392,7 @@ class Dialog(QDialog):
         self.inputField3 = QHBoxLayout()
         self.inputField3_Text = QLabel()
         self.inputField3_Text.setText("How many sets to play")
+        self.inputField3_Text.setAlignment(Qt.AlignCenter)
         self.inputField3.addWidget(self.inputField3_Text)
         self.inputField3_Data = QLineEdit()
         self.inputField3.addWidget(self.inputField3_Data)
@@ -397,6 +401,7 @@ class Dialog(QDialog):
         self.inputField4 = QHBoxLayout()
         self.inputField4_Text = QLabel()
         self.inputField4_Text.setText("How many legs to play")
+        self.inputField4_Text.setAlignment(Qt.AlignCenter)
         self.inputField4.addWidget(self.inputField4_Text)
         self.inputField4_Data = QLineEdit()
         self.inputField4.addWidget(self.inputField4_Data)
@@ -405,6 +410,7 @@ class Dialog(QDialog):
         self.inputField5 = QHBoxLayout()
         self.inputField5_Text = QLabel()
         self.inputField5_Text.setText("How many points to win a leg")
+        self.inputField5_Text.setAlignment(Qt.AlignLeft)
         self.inputField5.addWidget(self.inputField5_Text)
         self.inputField5_Data = QLineEdit()
         self.inputField5.addWidget(self.inputField5_Data)
