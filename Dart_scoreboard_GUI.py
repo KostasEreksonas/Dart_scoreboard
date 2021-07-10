@@ -8,9 +8,12 @@ __version__ = '0.1'
 __author__ = 'Kostas Ereksonas'
 
 import sys
+import os
+import datetime
 
 # Import needed PyQt5 widgets for creating a dart score calculator program's graphical user interface
 from PyQt5.QtCore import Qt
+from PyQt5.QtCore import QTimer
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QDialog
 from PyQt5.QtWidgets import QDialogButtonBox
@@ -26,10 +29,13 @@ from PyQt5.QtWidgets import QWidget
 # Variable list (copied from CLI version of the scoreboard)
 player_1 = "Name 1" # Name of the player 1
 player_2 = "Name 2" # Name of the player 2
+sets = 0            # Number of sets to play
 set_1 = 0           # Number of sets that player 1 won
 set_2 = 0           # Number of sets that player 2 won
+legs = 0            # Number of legs to play
 leg_1 = 0           # Number of legs that player 1 won
 leg_2 = 0           # Number of legs that player 2 won
+points = 0          # Number of points to score for winning a leg
 points_1 = 0        # Number of points that player 1 has left
 points_2 = 0        # Number of points that player 2 has left
 points_scored_1 = 0 # Number of points that player 1 has scored
@@ -58,6 +64,7 @@ class scoreboardUI(QMainWindow):
         self.setCentralWidget(self._centralWidget)
         self._centralWidget.setLayout(self.generalLayout)
         # Defined functions of various elements of the scorebard's GUI
+        self.clock()
         self._createHeading()
         self._namePlayer()
         self._setsStats()
@@ -70,6 +77,11 @@ class scoreboardUI(QMainWindow):
         self._scoreMax()
         self._scoreAverage()
         self._createButtons()
+
+
+    def clock(self):
+        """Clock function for updating the GUI."""
+        QTimer.singleShot(1000, self.clock)
 
     def _createHeading(self):
         """Create the Heading of the scoreboard."""
@@ -377,6 +389,7 @@ class Dialog(QDialog):
         # Placed functions for user input fields and buttons
         self._userInput()
         self._dialogButtons()
+        self.UI = scoreboardUI()
 
     def _userInput(self):
         """Function for collecting user inputted data."""
@@ -441,12 +454,40 @@ class Dialog(QDialog):
         QBtn = QDialogButtonBox.Ok | QDialogButtonBox.Cancel
         self.buttonBox = QDialogButtonBox(QBtn)
         self.buttonBox.accepted.connect(self.accept)
+        self.buttonBox.accepted.connect(self._setName1)
+        self.buttonBox.accepted.connect(self._setName2)
+        self.buttonBox.accepted.connect(self._setSets)
+        self.buttonBox.accepted.connect(self._setLegs)
+        self.buttonBox.accepted.connect(self._setPoints)
         self.buttonBox.rejected.connect(self.reject)
         self.generalLayout.addWidget(self.buttonBox)
-
     def _setName1(self):
         """Set name of Player 1."""
-        
+        player_1 = self.inputField1_Data.text()
+        self.UI._namePlayer.name1.setText("{}".format(player_1))
+        print(player_1)
+
+    def _setName2(self):
+        """Set name of Player 2."""
+        player_2 = self.inputField2_Data.text()
+        self.UI._namePlayer.name2.setText("{}".format(player_2))
+        print(player_2)
+
+    def _setSets(self):
+        """Set the number of sets to play."""
+        sets = self.inputField3_Data.text()
+        print(sets)
+
+    def _setLegs(self):
+        """Set the number of legs to play."""
+        legs = self.inputField4_Data.text()
+        print(legs)
+
+    def _setPoints(self):
+        """Set score to reach for winning a leg."""
+        points = self.inputField5_Data.text()
+        print(points)
+
 
 # Main function
 def main():
