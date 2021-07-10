@@ -141,7 +141,7 @@ class scoreboardUI(QMainWindow):
         # Set the field as Read-Only
         self.set1.setReadOnly(True)
         # Add counter of sets
-        self.set1.setText("0")          # Placeholder for now, will write a function for user input later
+        self.set1.setText("{}".format(set_1))          # Placeholder for now, will write a function for user input later
         # Add won set counter to sets layout
         self.setsLayout.addWidget(self.set1)
         # Create an instance of QLineEdit to put a set count of player 2
@@ -153,7 +153,7 @@ class scoreboardUI(QMainWindow):
         # Set the field as Read-Only
         self.set2.setReadOnly(True)
         # Add sets counter
-        self.set2.setText("0")          # Same as for player 1
+        self.set2.setText("{}".format(set_2))          # Same as for player 1
         # Add the field to sets layout
         self.setsLayout.addWidget(self.set2)
         # Add set counters to the general layout
@@ -173,13 +173,13 @@ class scoreboardUI(QMainWindow):
         self.leg1.setFixedHeight(35)
         self.leg1.setAlignment(Qt.AlignCenter)
         self.leg1.setReadOnly(True)
-        self.leg1.setText("0")          # Placeholder for now, will write a function for user input later
+        self.leg1.setText("{}".format(leg_1))          # Placeholder for now, will write a function for user input later
         self.legsLayout.addWidget(self.leg1)
         self.leg2 = QLineEdit()
         self.leg2.setFixedHeight(35)
         self.leg2.setAlignment(Qt.AlignCenter)
         self.leg2.setReadOnly(True)
-        self.leg2.setText("0")          # Same as for player 1
+        self.leg2.setText("{}".format(leg_2))          # Same as for player 1
         self.legsLayout.addWidget(self.leg2)
         self.generalLayout.addLayout(self.legsLayout)
 
@@ -218,13 +218,13 @@ class scoreboardUI(QMainWindow):
         self.scored1.setFixedHeight(35)
         self.scored1.setAlignment(Qt.AlignCenter)
         self.scored1.setReadOnly(True)
-        self.scored1.setText("180")          # Placeholder for now, will write a function for user input later
+        self.scored1.setText("{}".format(points_1))          # Placeholder for now, will write a function for user input later
         self.scoredLayout.addWidget(self.scored1)
         self.scored2 = QLineEdit()
         self.scored2.setFixedHeight(35)
         self.scored2.setAlignment(Qt.AlignCenter)
         self.scored2.setReadOnly(True)
-        self.scored2.setText("180")          # Same as for player 1
+        self.scored2.setText("{}".format(points_2))          # Same as for player 1
         self.scoredLayout.addWidget(self.scored2)
         self.generalLayout.addLayout(self.scoredLayout)
 
@@ -241,13 +241,13 @@ class scoreboardUI(QMainWindow):
         self._100_1.setFixedHeight(35)
         self._100_1.setAlignment(Qt.AlignCenter)
         self._100_1.setReadOnly(True)
-        self._100_1.setText("0")          # Placeholder for now, will write a function for user input later
+        self._100_1.setText("{}".format(count_100_1))          # Placeholder for now, will write a function for user input later
         self._100Layout.addWidget(self._100_1)
         self._100_2 = QLineEdit()
         self._100_2.setFixedHeight(35)
         self._100_2.setAlignment(Qt.AlignCenter)
         self._100_2.setReadOnly(True)
-        self._100_2.setText("0")          # Same as for player 1
+        self._100_2.setText("{}".format(count_100_2))          # Same as for player 1
         self._100Layout.addWidget(self._100_2)
         self.generalLayout.addLayout(self._100Layout)
 
@@ -264,13 +264,13 @@ class scoreboardUI(QMainWindow):
         self._140_1.setFixedHeight(35)
         self._140_1.setAlignment(Qt.AlignCenter)
         self._140_1.setReadOnly(True)
-        self._140_1.setText("0")          # Placeholder for now, will write a function for user input later
+        self._140_1.setText("{}".format(count_140_1))          # Placeholder for now, will write a function for user input later
         self._140Layout.addWidget(self._140_1)
         self._140_2 = QLineEdit()
         self._140_2.setFixedHeight(35)
         self._140_2.setAlignment(Qt.AlignCenter)
         self._140_2.setReadOnly(True)
-        self._140_2.setText("0")          # Same as for player 1
+        self._140_2.setText("{}".format(count_140_2))          # Same as for player 1
         self._140Layout.addWidget(self._140_2)
         self.generalLayout.addLayout(self._140Layout)
 
@@ -287,13 +287,13 @@ class scoreboardUI(QMainWindow):
         self._180_1.setFixedHeight(35)
         self._180_1.setAlignment(Qt.AlignCenter)
         self._180_1.setReadOnly(True)
-        self._180_1.setText("0")          # Placeholder for now, will write a function for user input later
+        self._180_1.setText("{}".format(count_180_1))          # Placeholder for now, will write a function for user input later
         self._180Layout.addWidget(self._180_1)
         self._180_2 = QLineEdit()
         self._180_2.setFixedHeight(35)
         self._180_2.setAlignment(Qt.AlignCenter)
         self._180_2.setReadOnly(True)
-        self._180_2.setText("0")          # Same as for player 1
+        self._180_2.setText("{}".format(count_180_2))          # Same as for player 1
         self._180Layout.addWidget(self._180_2)
         self.generalLayout.addLayout(self._180Layout)
 
