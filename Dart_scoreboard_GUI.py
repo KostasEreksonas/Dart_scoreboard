@@ -100,7 +100,7 @@ class scoreboardUI(QMainWindow):
         # Set player 1's name field as Read-Only
         self.name1.setReadOnly(True)
         # Set the name of player 1
-        self.name1.setText("{}".format(player_1))          # Placeholder for now, will write a function for user input later
+        self.name1.setText("{}".format(player_1))
         # Add name of player 1 to the names layout
         self.namesLayout.addWidget(self.name1)
         # Create a field to store the name of Player 2
@@ -112,7 +112,7 @@ class scoreboardUI(QMainWindow):
         # Set player 2's name field as Read-Only
         self.name2.setReadOnly(True)
         # Set the name of player 2
-        self.name2.setText("{}".format(player_2))          # Same as for player 1
+        self.name2.setText("{}".format(player_2))
         # Add name of player 2 to the names layout
         self.namesLayout.addWidget(self.name2)
         # Add player names to the general layout
