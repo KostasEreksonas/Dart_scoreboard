@@ -2,6 +2,8 @@
 
 # Filename Dart_score_calculator_GUI.py
 
+# Dependencies: Python3, PyQt5.QtCore, PyQt5.QtWidgets
+
 __version__ = '0.1'
 __author__ = 'Kostas Ereksonas'
 
