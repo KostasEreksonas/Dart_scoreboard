@@ -24,18 +24,20 @@ from PyQt5.QtWidgets import QHBoxLayout
 from PyQt5.QtWidgets import QWidget
 
 # Variable list (copied from CLI version of the scoreboard)
-set_1 = 0       # Number of sets that player 1 won
-set_2 = 0       # Number of sets that player 2 won
-leg_1 = 0       # Number of legs that player 1 won
-leg_2 = 0       # Number of legs that player 2 won
-points_1 = 0    # Number of points that player 1 scored
-points_2 = 0    # Number of points that player 2 scored
-count_100_1 = 0 # Count instances when player 1 scored more than 100 points during single 3-dart throw
-count_140_1 = 0 # Count instances when player 1 scored more than 140 points during single 3-dart throw
-count_180_1 = 0 # Count instances when player 1 scored more than 180 points during single 3-dart throw
-count_100_2 = 0 # Count instances when player 2 scored more than 100 points during single 3-dart throw
-count_140_2 = 0 # Count instances when player 2 scored more than 140 points during single 3-dart throw
-count_180_2 = 0 # Count instances when player 2 scored more than 180 points during single 3-dart throw
+player_1 = "Name 1" # Name of the player 1
+player_2 = "Name 2" # Name of the player 2
+set_1 = 0           # Number of sets that player 1 won
+set_2 = 0           # Number of sets that player 2 won
+leg_1 = 0           # Number of legs that player 1 won
+leg_2 = 0           # Number of legs that player 2 won
+points_1 = 0        # Number of points that player 1 scored
+points_2 = 0        # Number of points that player 2 scored
+count_100_1 = 0     # Count instances when player 1 scored more than 100 points during single 3-dart throw
+count_140_1 = 0     # Count instances when player 1 scored more than 140 points during single 3-dart throw
+count_180_1 = 0     # Count instances when player 1 scored more than 180 points during single 3-dart throw
+count_100_2 = 0     # Count instances when player 2 scored more than 100 points during single 3-dart throw
+count_140_2 = 0     # Count instances when player 2 scored more than 140 points during single 3-dart throw
+count_180_2 = 0     # Count instances when player 2 scored more than 180 points during single 3-dart throw
 
 class scoreboardUI(QMainWindow):
     """Main window of dart scoreboard."""
@@ -98,7 +100,7 @@ class scoreboardUI(QMainWindow):
         # Set player 1's name field as Read-Only
         self.name1.setReadOnly(True)
         # Set the name of player 1
-        self.name1.setText("Player 1")          # Placeholder for now, will write a function for user input later
+        self.name1.setText("{}".format(player_1))          # Placeholder for now, will write a function for user input later
         # Add name of player 1 to the names layout
         self.namesLayout.addWidget(self.name1)
         # Create a field to store the name of Player 2
@@ -110,7 +112,7 @@ class scoreboardUI(QMainWindow):
         # Set player 2's name field as Read-Only
         self.name2.setReadOnly(True)
         # Set the name of player 2
-        self.name2.setText("Player 2")          # Same as for player 1
+        self.name2.setText("{}".format(player_2))          # Same as for player 1
         # Add name of player 2 to the names layout
         self.namesLayout.addWidget(self.name2)
         # Add player names to the general layout
@@ -438,7 +440,7 @@ class Dialog(QDialog):
 
     def _setName1(self):
         """Set name of Player 1."""
-
+        
 
 # Main function
 def main():
