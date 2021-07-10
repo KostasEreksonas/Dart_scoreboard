@@ -30,8 +30,14 @@ set_1 = 0           # Number of sets that player 1 won
 set_2 = 0           # Number of sets that player 2 won
 leg_1 = 0           # Number of legs that player 1 won
 leg_2 = 0           # Number of legs that player 2 won
-points_1 = 0        # Number of points that player 1 scored
-points_2 = 0        # Number of points that player 2 scored
+points_1 = 0        # Number of points that player 1 has left
+points_2 = 0        # Number of points that player 2 has left
+points_scored_1 = 0 # Number of points that player 1 has scored
+points_scored_2 = 0 # Number of points that player 2 has scored
+average_1 = 0       # Points average for player 1
+average_2 = 0       # Points average for player 2
+max_1 = 0           # Maximum score of player 1
+max_2 = 0           # Maximum score of player 2
 count_100_1 = 0     # Count instances when player 1 scored more than 100 points during single 3-dart throw
 count_140_1 = 0     # Count instances when player 1 scored more than 140 points during single 3-dart throw
 count_180_1 = 0     # Count instances when player 1 scored more than 180 points during single 3-dart throw
@@ -197,13 +203,13 @@ class scoreboardUI(QMainWindow):
         self.point1 = QLineEdit()
         self.point1.setFixedHeight(35)
         self.point1.setAlignment(Qt.AlignCenter)
-        self.point1.setText("501")          # Placeholder for now, will write a function for user input later
+        self.point1.setText("{}".format(points_1))
         self.pointsLayout.addWidget(self.point1)
         self.point2 = QLineEdit()
         self.point2.setFixedHeight(35)
         self.point2.setAlignment(Qt.AlignCenter)
         self.point2.setReadOnly(True)
-        self.point2.setText("501")          # Same as for player 1
+        self.point2.setText("{}".format(points_2))
         self.pointsLayout.addWidget(self.point2)
         self.generalLayout.addLayout(self.pointsLayout)
 
@@ -220,13 +226,13 @@ class scoreboardUI(QMainWindow):
         self.scored1.setFixedHeight(35)
         self.scored1.setAlignment(Qt.AlignCenter)
         self.scored1.setReadOnly(True)
-        self.scored1.setText("{}".format(points_1))
+        self.scored1.setText("{}".format(points_scored_1))
         self.scoredLayout.addWidget(self.scored1)
         self.scored2 = QLineEdit()
         self.scored2.setFixedHeight(35)
         self.scored2.setAlignment(Qt.AlignCenter)
         self.scored2.setReadOnly(True)
-        self.scored2.setText("{}".format(points_2))
+        self.scored2.setText("{}".format(points_scored_2))
         self.scoredLayout.addWidget(self.scored2)
         self.generalLayout.addLayout(self.scoredLayout)
 
@@ -312,13 +318,13 @@ class scoreboardUI(QMainWindow):
         self.max1.setFixedHeight(35)
         self.max1.setAlignment(Qt.AlignCenter)
         self.max1.setReadOnly(True)
-        self.max1.setText("180")          # Placeholder for now, will write a function for user input later
+        self.max1.setText("{}".format(max_1))
         self.maxLayout.addWidget(self.max1)
         self.max2 = QLineEdit()
         self.max2.setFixedHeight(35)
         self.max2.setAlignment(Qt.AlignCenter)
         self.max2.setReadOnly(True)
-        self.max2.setText("180")          # Same as for player 1
+        self.max2.setText("{}".format(max_2))
         self.maxLayout.addWidget(self.max2)
         self.generalLayout.addLayout(self.maxLayout)
 
@@ -335,13 +341,13 @@ class scoreboardUI(QMainWindow):
         self.average1.setFixedHeight(35)
         self.average1.setAlignment(Qt.AlignCenter)
         self.average1.setReadOnly(True)
-        self.average1.setText("180")          # Placeholder for now, will write a function for user input later
+        self.average1.setText("{}".format(average_1))
         self.averageLayout.addWidget(self.average1)
         self.average2 = QLineEdit()
         self.average2.setFixedHeight(35)
         self.average2.setAlignment(Qt.AlignCenter)
         self.average2.setReadOnly(True)
-        self.average2.setText("180")          # Same as for player 1
+        self.average2.setText("{}".format(average_2))
         self.averageLayout.addWidget(self.average2)
         self.generalLayout.addLayout(self.averageLayout)
 
