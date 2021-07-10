@@ -42,5 +42,10 @@ Next is the sketch of a ***Dialog*** window, which is used for collecting user i
 
 Also I have added a [.drawio file for calculator's Dialog scheme](/schemes/score_calculator_Dialog_sketch.drawio) in a [schemes](/schemes/) folder.
 
+
+# What to fix
+
+1. Redraw the main window after entering user data in a Dialog window.
+
 # Further work
 Later I plan to update a GUI version of this dart score calculator and maybe implement some additional functionality.
