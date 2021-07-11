@@ -32,7 +32,7 @@ player_2 = "Name 2" # Name of the player 2
 sets = 0            # Number of sets to play
 set_1 = 0           # Number of sets that player 1 won
 set_2 = 0           # Number of sets that player 2 won
-legs = 0            # Number of legs to play
+legs = 2            # Number of legs to play
 leg_1 = 0           # Number of legs that player 1 won
 leg_2 = 0           # Number of legs that player 2 won
 points = 0          # Number of points to score for winning a leg
@@ -57,7 +57,7 @@ class scoreboardUI(QMainWindow):
         super().__init__()
         # Set title and size of main window
         self.setWindowTitle('Dart scoreboard')
-        self.setFixedSize(400, 450)
+        self.setFixedSize(800, 900)
         # Set the central widget and general layout
         self.generalLayout = QVBoxLayout()
         self._centralWidget = QWidget(self)
@@ -81,7 +81,19 @@ class scoreboardUI(QMainWindow):
 
     def clock(self):
         """Clock function for updating the GUI."""
-        QTimer.singleShot(1000, self.clock)
+        QTimer.singleShot(10000, self.clock)
+        self._createHeading()
+        self._namePlayer()
+        self._setsStats()
+        self._legsStats()
+        self._pointsLeft()
+        self._pointsScored()
+        self._100()
+        self._140()
+        self._180()
+        self._scoreMax()
+        self._scoreAverage()
+        self._createButtons()
 
     def _createHeading(self):
         """Create the Heading of the scoreboard."""
@@ -391,7 +403,6 @@ class Dialog(QDialog):
         # Placed functions for user input fields and buttons
         self._userInput()
         self._dialogButtons()
-        self.UI = scoreboardUI()
 
     def _userInput(self):
         """Function for collecting user inputted data."""
@@ -463,16 +474,15 @@ class Dialog(QDialog):
         self.buttonBox.accepted.connect(self._setPoints)
         self.buttonBox.rejected.connect(self.reject)
         self.generalLayout.addWidget(self.buttonBox)
+
     def _setName1(self):
         """Set name of Player 1."""
         player_1 = self.inputField1_Data.text()
-        self.UI._namePlayer()
         print(player_1)
 
     def _setName2(self):
         """Set name of Player 2."""
         player_2 = self.inputField2_Data.text()
-        self.UI._namePlayer()
         print(player_2)
 
     def _setSets(self):
