@@ -13,7 +13,6 @@ import datetime
 
 # Import needed PyQt5 widgets for creating a dart score calculator program's graphical user interface
 from PyQt5.QtCore import Qt
-from PyQt5.QtCore import QTimer
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QDialog
 from PyQt5.QtWidgets import QDialogButtonBox
@@ -78,7 +77,8 @@ class scoreboardUI(QMainWindow):
         self._createButtons()
 
     def test(self, var):
-        print ("Test {}".format(var))
+        print("{}".format(var))
+        return ("{}".format(var))
 
     def _createHeading(self):
         """Create the Heading of the scoreboard."""
@@ -463,9 +463,8 @@ class Dialog(QDialog):
 
     def _setName1(self):
         """Set name of Player 1."""
-        self.UI = scoreboardUI()
+        global player_1
         player_1 = self.inputField1_Data.text()
-        self.UI.test(player_1)
         print(player_1)
 
     def _setName2(self):
@@ -497,6 +496,7 @@ def main():
     # Show GUI of the application
     view = scoreboardUI()
     view.show()
+    view.update()
     view.test(player_1)
     # Execute the main loop
     sys.exit(scoreboard.exec_())
