@@ -57,14 +57,13 @@ class scoreboardUI(QMainWindow):
         super().__init__()
         # Set title and size of main window
         self.setWindowTitle('Dart scoreboard')
-        self.setFixedSize(800, 900)
+        self.setFixedSize(400, 450)
         # Set the central widget and general layout
         self.generalLayout = QVBoxLayout()
         self._centralWidget = QWidget(self)
         self.setCentralWidget(self._centralWidget)
         self._centralWidget.setLayout(self.generalLayout)
         # Defined functions of various elements of the scorebard's GUI
-        self.clock()
         self._createHeading()
         self._namePlayer()
         self._setsStats()
@@ -78,22 +77,8 @@ class scoreboardUI(QMainWindow):
         self._scoreAverage()
         self._createButtons()
 
-
-    def clock(self):
-        """Clock function for updating the GUI."""
-        QTimer.singleShot(10000, self.clock)
-        self._createHeading()
-        self._namePlayer()
-        self._setsStats()
-        self._legsStats()
-        self._pointsLeft()
-        self._pointsScored()
-        self._100()
-        self._140()
-        self._180()
-        self._scoreMax()
-        self._scoreAverage()
-        self._createButtons()
+    def test(self, var):
+        print ("Test {}".format(var))
 
     def _createHeading(self):
         """Create the Heading of the scoreboard."""
@@ -119,6 +104,7 @@ class scoreboardUI(QMainWindow):
         self.nameBlank.setAlignment(Qt.AlignCenter)
         # Set the blank field as Read-Only
         self.nameBlank.setReadOnly(True)
+        self.nameBlank.setText(self.test(player_1))
         # Add the blank field to the names layout
         self.namesLayout.addWidget(self.nameBlank)
         # Create a field to store the name of Player 1
@@ -477,7 +463,9 @@ class Dialog(QDialog):
 
     def _setName1(self):
         """Set name of Player 1."""
+        self.UI = scoreboardUI()
         player_1 = self.inputField1_Data.text()
+        self.UI.test(player_1)
         print(player_1)
 
     def _setName2(self):
@@ -509,6 +497,7 @@ def main():
     # Show GUI of the application
     view = scoreboardUI()
     view.show()
+    view.test(player_1)
     # Execute the main loop
     sys.exit(scoreboard.exec_())
 
