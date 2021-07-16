@@ -8,8 +8,6 @@ __version__ = '0.1'
 __author__ = 'Kostas Ereksonas'
 
 import sys
-import os
-import datetime
 
 # Import needed PyQt5 widgets for creating a dart score calculator program's graphical user interface
 from PyQt5.QtCore import Qt
@@ -235,13 +233,11 @@ class scoreboardUI(QMainWindow):
         self.scored1 = QLineEdit()
         self.scored1.setFixedHeight(35)
         self.scored1.setAlignment(Qt.AlignCenter)
-        self.scored1.setReadOnly(True)
         self.scored1.setText("{}".format(points_scored_1))
         self.scoredLayout.addWidget(self.scored1)
         self.scored2 = QLineEdit()
         self.scored2.setFixedHeight(35)
         self.scored2.setAlignment(Qt.AlignCenter)
-        self.scored2.setReadOnly(True)
         self.scored2.setText("{}".format(points_scored_2))
         self.scoredLayout.addWidget(self.scored2)
         self.generalLayout.addLayout(self.scoredLayout)
@@ -372,8 +368,14 @@ class scoreboardUI(QMainWindow):
         """Function to call Dialog window class."""
         self.dialogWindow = Dialog().exec_()
 
-"""Functions for counting scores and statistics"""
-    #def
+    # Functions for counting scores and statistics
+    def _leftPoints1(self, var):
+        """Return how many points player 1 has left."""
+        return (points_1 == points_1 - var)
+
+    def _leftPoints2(self, var):
+        """Return how many points player 2 has left."""
+        return (points_2 == points_2 - var)
 
 class Dialog(QDialog):
     """Dialog window of dart scoreboard."""
@@ -496,7 +498,6 @@ def main():
     # Show GUI of the application
     view = scoreboardUI()
     view.show()
-    view.update()
     view.test(player_1)
     # Execute the main loop
     sys.exit(scoreboard.exec_())
