@@ -390,7 +390,7 @@ class Dialog(QDialog):
         self._centralWidget.setLayout(self.generalLayout)
         # Placed functions for user input fields and buttons
         self._userInput()
-        self._dialogButtons()
+        self._dialogButtons(self)
 
     def _userInput(self):
         """Function for collecting user inputted data."""
@@ -450,7 +450,7 @@ class Dialog(QDialog):
         # Add input fields to the general layout
         self.generalLayout.addLayout(self.inputFields)
 
-    def _dialogButtons(self):
+    def _dialogButtons(self, function):
         """Function for adding buttons to dialog."""
         QBtn = QDialogButtonBox.Ok | QDialogButtonBox.Cancel
         self.buttonBox = QDialogButtonBox(QBtn)
@@ -460,6 +460,7 @@ class Dialog(QDialog):
         self.buttonBox.accepted.connect(self._setSets)
         self.buttonBox.accepted.connect(self._setLegs)
         self.buttonBox.accepted.connect(self._setPoints)
+        self.buttonBox.accepted.connect(self._userInput)
         self.buttonBox.rejected.connect(self.reject)
         self.generalLayout.addWidget(self.buttonBox)
 
@@ -499,6 +500,9 @@ def main():
     view = scoreboardUI()
     view.show()
     view.test(player_1)
+    # Instance of a Dialog
+    dialog = Dialog()
+    dialog._dialogButtons(lambda text: view._namePlayer.name1.setText(text))
     # Execute the main loop
     sys.exit(scoreboard.exec_())
 
