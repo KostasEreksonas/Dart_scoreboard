@@ -47,7 +47,7 @@ Also I have added a [.drawio file for calculator's Dialog scheme](/schemes/score
 # What to fix
 
 1. Add functions for score and game statistics counting
-2. Redraw the main window after entering user data in a Dialog window.
+2. Include the data an user inputted in a Dialog window to Main Window (redraw Main Window).
 
 # Further work
 Later I plan to update a GUI version of this dart score calculator and maybe implement some additional functionality.
