@@ -74,107 +74,60 @@ class scoreboardUI(QMainWindow):
         self._scoreAverage()
         self._createButtons()
 
-    def test(self, var):
-        print("{}".format(var))
-        return ("{}".format(var))
-
     def _createHeading(self):
         """Create the Heading of the scoreboard."""
-        # Create the heading widget
-        self.heading = QLineEdit()
-        # Set properties of the heading - fixed height, alignment, heading text and make it read-only
-        self.heading.setFixedHeight(35)
-        self.heading.setAlignment(Qt.AlignCenter)
-        self.heading.setText("Dart scoreboard")
-        self.heading.setReadOnly(True)
-        # Add the heading to the general layout
-        self.generalLayout.addWidget(self.heading)
+        self.heading = QLineEdit()  # Create the heading widget
+        # Set properties of the heading
+        self.heading.setFixedHeight(35) # Fixed height
+        self.heading.setAlignment(Qt.AlignCenter)   # Center alignment
+        self.heading.setText("Dart scoreboard") # Heading
+        self.heading.setReadOnly(True)  # Set as read only
+        self.generalLayout.addWidget(self.heading)  # Add the heading to the general layout
 
     def _namePlayer(self):
         """Display names of a dart game players."""
-        # Set the layout for displaying player names
-        self.namesLayout = QHBoxLayout()
-        # Add a blank field as every column has 3 rows
-        self.nameBlank = QLineEdit()
-        # Set height of the blank field
-        self.nameBlank.setFixedHeight(35)
-        # Set alignment of the blank field
-        self.nameBlank.setAlignment(Qt.AlignCenter)
-        # Set the blank field as Read-Only
-        self.nameBlank.setReadOnly(True)
-        self.nameBlank.setText(self.test(player_1))
-        # Add the blank field to the names layout
-        self.namesLayout.addWidget(self.nameBlank)
-        # Create a field to store the name of Player 1
-        self.name1 = QLineEdit()
-        # Set height of player 1's name field
-        self.name1.setFixedHeight(35)
-        # Set alignment of player 1's name
-        self.name1.setAlignment(Qt.AlignCenter)
-        # Set player 1's name field as Read-Only
-        self.name1.setReadOnly(True)
-        # Set the name of player 1
-        self.name1.setText("{}".format(player_1))
-        # Add name of player 1 to the names layout
-        self.namesLayout.addWidget(self.name1)
-        # Create a field to store the name of Player 2
-        self.name2 = QLineEdit()
-        # Set height of player 2 name field
-        self.name2.setFixedHeight(35)
-        # Set alignment of player 2's name
-        self.name2.setAlignment(Qt.AlignCenter)
-        # Set player 2's name field as Read-Only
-        self.name2.setReadOnly(True)
-        # Set the name of player 2
-        self.name2.setText("{}".format(player_2))
-        # Add name of player 2 to the names layout
-        self.namesLayout.addWidget(self.name2)
-        # Add player names to the general layout
-        self.generalLayout.addLayout(self.namesLayout)
+        self.namesLayout = QHBoxLayout()    # Set the layout for displaying player names
+        self.nameBlank = QLineEdit()        # Add a blank field as every column has 3 rows
+        self.nameBlank.setFixedHeight(35)   # Set height of the blank field
+        self.nameBlank.setAlignment(Qt.AlignCenter) # Set alignment of the blank field
+        self.nameBlank.setReadOnly(True)    # Set the blank field as Read-Only
+        self.namesLayout.addWidget(self.nameBlank)  # Add the blank field to the names layout
+        self.name1 = QLineEdit()    # Create a field to store the name of Player 1
+        self.name1.setFixedHeight(35)   # Set height of player 1's name field
+        self.name1.setAlignment(Qt.AlignCenter) # Set alignment of player 1's name
+        self.name1.setReadOnly(True)    # Set player 1's name field as Read-Only
+        self.name1.setText("{}".format(player_1))   # Set the name of player 1
+        self.namesLayout.addWidget(self.name1)  # Add name of player 1 to the names layout
+        self.name2 = QLineEdit()    # Create a field to store the name of Player 2
+        self.name2.setFixedHeight(35)   # Set height of player 2 name field
+        self.name2.setAlignment(Qt.AlignCenter) # Set alignment of player 2's name
+        self.name2.setReadOnly(True)    # Set player 2's name field as Read-Only
+        self.name2.setText("{}".format(player_2))   # Set the name of player 2
+        self.namesLayout.addWidget(self.name2)  # Add name of player 2 to the names layout
+        self.generalLayout.addLayout(self.namesLayout)  # Add player names to the general layout
 
     def _setsStats(self):
         """Displaying won sets statistics for both players."""
-        # Set layout for displaying set counts
-        self.setsLayout = QHBoxLayout()
-        # Display a title of a set count fields line
-        self.setName = QLineEdit()
-        # Set height of set count field
-        self.setName.setFixedHeight(35)
-        # Set alignment of the block
-        self.setName.setAlignment(Qt.AlignCenter)
-        # Set the block as a Read-Only
-        self.setName.setReadOnly(True)
-        # Add the title
-        self.setName.setText("Sets won")
-        # Add the block to sets layout
-        self.setsLayout.addWidget(self.setName)
-        # Create an instance of QLineEdit to put a set count for player 1
-        self.set1 = QLineEdit()
-        # Set height of the field
-        self.set1.setFixedHeight(35)
-        # Set alignment of the field
-        self.set1.setAlignment(Qt.AlignCenter)
-        # Set the field as Read-Only
-        self.set1.setReadOnly(True)
-        # Add counter of sets
-        self.set1.setText("{}".format(set_1))
-        # Add won set counter to sets layout
-        self.setsLayout.addWidget(self.set1)
-        # Create an instance of QLineEdit to put a set count of player 2
-        self.set2 = QLineEdit()
-        # Set height of the field
-        self.set2.setFixedHeight(35)
-        # Set alignment of the field
-        self.set2.setAlignment(Qt.AlignCenter)
-        # Set the field as Read-Only
-        self.set2.setReadOnly(True)
-        # Add sets counter
-        self.set2.setText("{}".format(set_2))
-        # Add the field to sets layout
-        self.setsLayout.addWidget(self.set2)
-        # Add set counters to the general layout
-        self.generalLayout.addLayout(self.setsLayout)
-        # The same principles are used in further functions also
+        self.setsLayout = QHBoxLayout() # Set layout for displaying set counts
+        self.setName = QLineEdit()  # Display a title of a set count fields line
+        self.setName.setFixedHeight(35) # Set height of set count field
+        self.setName.setAlignment(Qt.AlignCenter)   # Set alignment of the block
+        self.setName.setReadOnly(True)  # Set the block as a Read-Only
+        self.setName.setText("Sets won")    # Add the title
+        self.setsLayout.addWidget(self.setName) # Add the block to sets layout
+        self.set1 = QLineEdit() # Create an instance of QLineEdit to put a set count for player 1
+        self.set1.setFixedHeight(35)    # Set height of the field
+        self.set1.setAlignment(Qt.AlignCenter)  # Set alignment of the field
+        self.set1.setReadOnly(True) # Set the field as Read-Only
+        self.set1.setText("{}".format(set_1))   # Add counter of sets
+        self.setsLayout.addWidget(self.set1)    # Add won set counter to sets layout
+        self.set2 = QLineEdit() # Create an instance of QLineEdit to put a set count of player 2
+        self.set2.setFixedHeight(35)    # Set height of the field
+        self.set2.setAlignment(Qt.AlignCenter)  # Set alignment of the field
+        self.set2.setReadOnly(True) # Set the field as Read-Only
+        self.set2.setText("{}".format(set_2))   # Add sets counter
+        self.setsLayout.addWidget(self.set2)    # Add the field to sets layout
+        self.generalLayout.addLayout(self.setsLayout)   # Add set counters to the general layout
 
     def _legsStats(self):
         """Displaying won legs statistics for both players."""
@@ -466,45 +419,39 @@ class Dialog(QDialog):
 
     def _setName1(self):
         """Set name of Player 1."""
-        global player_1
         player_1 = self.inputField1_Data.text()
-        print(player_1)
+        return(player_1)
 
     def _setName2(self):
         """Set name of Player 2."""
         player_2 = self.inputField2_Data.text()
-        print(player_2)
+        return(player_2)
 
     def _setSets(self):
         """Set the number of sets to play."""
         sets = self.inputField3_Data.text()
-        print(sets)
+        return(sets)
 
     def _setLegs(self):
         """Set the number of legs to play."""
         legs = self.inputField4_Data.text()
-        print(legs)
+        return(legs)
 
     def _setPoints(self):
         """Set score to reach for winning a leg."""
         points = self.inputField5_Data.text()
-        print(points)
+        return(points)
 
 
 # Main function
 def main():
     """Main function."""
-    # Create an instance of QApplication
-    scoreboard = QApplication(sys.argv)
+    scoreboard = QApplication(sys.argv) # Create an instance of QApplication
     # Show GUI of the application
     view = scoreboardUI()
     view.show()
-    view.test(player_1)
-    # Instance of a Dialog
-    dialog = Dialog()
-    dialog._dialogButtons(lambda text: view._namePlayer.name1.setText(text))
-    # Execute the main loop
-    sys.exit(scoreboard.exec_())
+    dialog = Dialog()   # Instance of a Dialog
+    sys.exit(scoreboard.exec_())    # Execute the main loop
 
 if __name__ == '__main__':
     main()
