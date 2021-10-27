@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Filename Dart_score_calculator_GUI.py
+# Filename Graphical_dart_scoreboard.py
 
 # Dependencies: Python3, PyQt5.QtCore, PyQt5.QtWidgets
 
