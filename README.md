@@ -50,4 +50,4 @@ Also I have added a [.drawio file for calculator's Dialog scheme](/schemes/score
 2. Include the data an user inputted in a Dialog window to Main Window (redraw Main Window).
 
 # Further work
-Later I plan to update a GUI version of this dart score calculator and maybe implement some additional functionality.
+Redesign of dart scoreboard's GUI code.
