@@ -4,7 +4,7 @@
 
 # Dependencies: Python3, PyQt5.QtCore, PyQt5.QtWidgets
 
-__version__ = 'Partially working'
+__version__ = '0.1'
 __author__ = 'Kostas Ereksonas'
 
 import sys
