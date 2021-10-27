@@ -451,7 +451,7 @@ def main():
     view = scoreboardUI()
     view.show()
     dialog = Dialog()   # Instance of a Dialog
-    sys.exit(scoreboard.exec_())    # Execute the main loop
+    sys.exit(scoreboard.exec_()) # Execute the main loop
 
 if __name__ == '__main__':
     main()
