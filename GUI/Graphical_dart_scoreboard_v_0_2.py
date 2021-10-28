@@ -12,14 +12,18 @@ __author__ = "Kostas Ereksonas"
 #  ---------
 
 import sys
-from PyQt5.QtWidgets import QApplication, QLabel
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
 
 #  ---------
 # | Classes |
 #  ---------
 
-class mainWindow():
+class scoreboardUI():
     def __init__(self):
+        pass
+
+    def createLayout(self):
         pass
 
 
@@ -28,4 +32,13 @@ class dialogWindow():
         pass
 
 
+def main():
+    """Main function."""
+    scoreboard = QApplication(sys.argv)
+    view = scoreboardUI()
+    view.show()
+    dialog = Dialog()
+    sys.exit(scoreboard.exec_())
 
+if __name__ == '__main__':
+    main()
