@@ -12,7 +12,7 @@ Table of Contents
 
 # Versions
 
-1. The scoreboard working within Command Line Interface (CLI) can be found in [CLI folder](/CLI) and the source code [can be found by following this link](/CLI/Dart_score_calculator.py).
+1. The scoreboard working within Command Line Interface (CLI) can be found in [CLI folder](/CLI) and the source code [can be found by following this link](/CLI/Dart_scoreboard.py).
 2. The graphical version of the scoreboard with GUI can be found in [GUI](/GUI) folder and the source code for it [can be found here](/GUI/Graphical_dart_scoreboard_v_0_2.py).
 3. Previous versions of the scoreboard with GUI can be found in [Previous versions](/GUI/Previous_versions) subfolder within GUI folder.
 
