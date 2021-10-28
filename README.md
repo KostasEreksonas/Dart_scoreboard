@@ -6,8 +6,8 @@ Table of Contents
 =================
 * [Dart Score Calculator](#Dart-Score-Calculator)
 * [Versions](#Versions)
-* [CLI Version](#CLI_Version)
-* [GUI Version](#GUI_Version)
+* [CLI Version](#CLI-Version)
+* [GUI Version](#GUI-Version)
 * [Further work](#Further-Work)
 
 # Versions
