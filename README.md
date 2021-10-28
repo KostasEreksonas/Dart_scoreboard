@@ -1,22 +1,22 @@
-# Dart score calculator
+# Dart Score Calculator
+
+Project for creating scoreboard for the game of Darts. There are CLI and GUI versions of the scoreboard.
 
 Table of Contents
 =================
-* [Dart score calculator](#Dart-score-calculator)
-* [Dart score calculator program](Dart-score-calculator-program)
-* [CLI version](#CLI_version)
-* [GUI version](#GUI_version)
-* [Previous versions](#Previous-versions)
-* [What to update](#What-to-update)
-* [Further work](#Further-work)
+* [Dart Score Calculator](#Dart-Score-Calculator)
+* [Versions](#Versions)
+* [CLI Version](#CLI_Version)
+* [GUI Version](#GUI_Version)
+* [Further work](#Further-Work)
 
-# Dart score calculator program
+# Versions
 
-This is a simple CLI program used to calculate sets, legs and points of darts game. It is written to count score of a two player game. This program is createad with Python programming language. The code can be found within [Dart_score_calculator.py](Dart_score_calculator.py) file and is distributed under a GNU GPL-3.0 License.
+1. The scoreboard working within Command Line Interface (CLI) can be found in [CLI folder](/CLI) and the source code [can be found by following this link](/CLI/Dart_score_calculator.py).
+2. The graphical version of the scoreboard with GUI can be found in [GUI](/GUI) folder and the source code for it [can be found here](/GUI/Graphical_dart_scoreboard_v_0_2.py).
+3. Previous versions of the scoreboard with GUI can be found in [Previous versions](/GUI/Previous_versions) subfolder within GUI folder.
 
-I've also started creating a [GUI version](Dart_score_calculator_GUI.py) of this dart score calculator.
-
-# CLI version
+# CLI Version
 
 Features of this version are:
 
@@ -26,7 +26,7 @@ Features of this version are:
 4. Count an average score of 3-dart throws made.
 5. Count stats - ammount of times of scored 100's 140's and 180's.
 
-# GUI version
+# GUI Version
 
 Features of this version are:
 
@@ -44,19 +44,12 @@ Next is the sketch of a ***Dialog*** window, which is used for collecting user i
 
 Also I have added a [.drawio file for calculator's Dialog scheme](/schemes/score_calculator_Dialog_sketch.drawio) in a [schemes](/schemes/) folder.
 
-# Previous versions
+# Further Work
 
-Previous versions of Dart scoreboard programs are stored in [Previous versions](/Previous_versions) folder.
-
-# What to update
-
-In ***v0.2*** I will implement these updates:
+In ***v0.2*** I will redesign the code of the GUI and will implement these updates:
 
 1. Clean the code for drawing Main window and Dialog window.
 2. Pass user input from Dialog to the Main window.
 3. Input data in specific Main window fields.
 4. Pass the user input to predefined functions for calculations.
 5. Redraw the Main window with new calculated values.
-
-# Further work
-Redesign of dart scoreboard's GUI code.
