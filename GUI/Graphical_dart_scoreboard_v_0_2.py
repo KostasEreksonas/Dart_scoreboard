@@ -6,3 +6,26 @@
 
 __version__ = "0.2"
 __author__ = "Kostas Ereksonas"
+
+#  ---------
+# | Imports |
+#  ---------
+
+import sys
+from PyQt5.QtWidgets import QApplication, QLabel
+
+#  ---------
+# | Classes |
+#  ---------
+
+class mainWindow():
+    def __init__(self):
+        pass
+
+
+class dialogWindow():
+    def __init__(self):
+        pass
+
+
+
