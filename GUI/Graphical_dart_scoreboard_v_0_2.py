@@ -12,7 +12,7 @@ __author__ = "Kostas Ereksonas"
 #  ---------
 
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QLabel
 
 #  ---------
 # | Classes |
@@ -67,24 +67,24 @@ class calculateResults():
 #  -------------
 # | Main Window |
 #  -------------
-class scoreboardUI():
+class mainWindow(QMainWindow):
     def __init__(self):
-        pass
+        super().__init__()
 
 #  ---------------
 # | Dialog window |
 #  ---------------
-class dialogWindow():
+class dialogWindow(QDialog):
     def __init__(self):
-        pass
+        super().__init__()
 
 
 def main():
     """Main function."""
     scoreboard = QApplication(sys.argv)
-    view = scoreboardUI()
+    view = mainWindow()
     view.show()
-    dialog = Dialog()
+    dialog = dialogWindow()
     sys.exit(scoreboard.exec_())
 
 if __name__ == "__main__":
