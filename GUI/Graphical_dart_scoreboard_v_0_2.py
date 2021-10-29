@@ -89,6 +89,7 @@ class mainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.createWindow()
+        self.startButton()
 
     def createWindow(self):
         self.setWindowTitle("Dart Scoreboard")
@@ -172,6 +173,15 @@ class mainWindow(QMainWindow):
                         self.boxLayout.addWidget(displayBoxes[l+27])
                     self.generalLayout.addLayout(self.boxLayout)
 
+    def startButton(self):
+        self.dialogOpen = QPushButton()
+        self.dialogOpen.setText("Start game")
+        self.dialogOpen.clicked.connect(self.callDialog)
+        self.generalLayout.addWidget(self.dialogOpen)
+
+    def callDialog(self):
+        self.Dialog = dialogWindow().exec_()
+
 
 #  ---------------
 # | Dialog window |
@@ -238,10 +248,9 @@ class dialogWindow(QDialog):
 def main():
     """Main function."""
     scoreboard = QApplication(sys.argv)
-    #view = mainWindow()
-    view = dialogWindow()
+    view = mainWindow()
     view.show()
-    #dialog = dialogWindow()
+    dialog = dialogWindow()
     sys.exit(scoreboard.exec_())
 
 if __name__ == "__main__":
