@@ -13,7 +13,16 @@ __author__ = "Kostas Ereksonas"
 
 import sys
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QLabel, QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QDialogButtonBox, QPushButton
+from PyQt5.QtWidgets import QApplication
+from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtWidgets import QDialog
+from PyQt5.QtWidgets import QLabel
+from PyQt5.QtWidgets import QWidget
+from PyQt5.QtWidgets import QVBoxLayout
+from PyQt5.QtWidgets import QHBoxLayout
+from PyQt5.QtWidgets import QLineEdit
+from PyQt5.QtWidgets import QDialogButtonBox
+from PyQt5.QtWidgets import QPushButton
 
 #  ---------
 # | Classes |
