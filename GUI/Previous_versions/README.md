@@ -3,11 +3,11 @@
 Table of Contents
 =================
 * [Previous Versions](#Previous-Versions)
-* [Version 0.1](#Version-0-.-1)
+* [Initial Version](#Initial-Version)
 * [What is Working](#What-is-Working)
 * [What is not Working](#What-is-not-Working)
 
-# Version 0.1
+# Initial Version
 Code for this version of dart scoreboard with Graphical User Interface (GUI) is placed [here](/GUI/Previous_versions/Graphical_dart_scoreboard_v_0_1.py).
 
 # What is Working
