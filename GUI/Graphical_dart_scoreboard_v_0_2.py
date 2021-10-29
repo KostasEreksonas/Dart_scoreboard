@@ -13,7 +13,7 @@ __author__ = "Kostas Ereksonas"
 
 import sys
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QLabel, QWidget, QVBoxLayout, QHBoxLayout, QLineEdit
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QLabel, QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QDialogButtonBox, QPushButton
 
 #  ---------
 # | Classes |
@@ -180,11 +180,12 @@ class dialogWindow(QDialog):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Start of the game")
-        self.setFixedSize(300,180)
+        self.setFixedSize(280,200)
         self.generalLayout = QVBoxLayout()
         self.centralWidget = QWidget(self)
         self.centralWidget.setLayout(self.generalLayout)
         self.inputFields()
+        self.dialogButtons()
 
     def inputFields(self):
         self.inputField1 = QHBoxLayout()
@@ -204,7 +205,7 @@ class dialogWindow(QDialog):
         self.inputField_Data_5 = QLineEdit()
 
         Labels = ["First player name", "Second player name", "Number of sets to play", "Number of legs to play", "Number of points to score"]
-        print(len(Labels))
+
         self.inputField_Label_1.setText(Labels[0])
         self.inputField1.addWidget(self.inputField_Label_1)
         self.inputField1.addWidget(self.inputField_Data_1)
@@ -225,6 +226,14 @@ class dialogWindow(QDialog):
         self.inputField5.addWidget(self.inputField_Label_5)
         self.inputField5.addWidget(self.inputField_Data_5)
         self.generalLayout.addLayout(self.inputField5)
+
+    def dialogButtons(self):
+        QBtn = QDialogButtonBox.Ok | QDialogButtonBox.Cancel
+        self.buttonBox = QDialogButtonBox(QBtn)
+        self.buttonBox.accepted.connect(self.accept)
+        self.buttonBox.rejected.connect(self.reject)
+        self.generalLayout.addWidget(self.buttonBox)
+
 
 def main():
     """Main function."""
