@@ -179,14 +179,60 @@ class mainWindow(QMainWindow):
 class dialogWindow(QDialog):
     def __init__(self):
         super().__init__()
+        self.setWindowTitle("Start of the game")
+        self.setFixedSize(300,180)
+        self.generalLayout = QVBoxLayout()
+        self.centralWidget = QWidget(self)
+        self.centralWidget.setLayout(self.generalLayout)
+        self.inputFields()
 
+    def inputFields(self):
+        self.inputField1 = QHBoxLayout()
+        self.inputField_Label_1 = QLabel()
+        self.inputField_Data_1 = QLineEdit()
+        self.inputField2 = QHBoxLayout()
+        self.inputField_Label_2 = QLabel()
+        self.inputField_Data_2 = QLineEdit()
+        self.inputField3 = QHBoxLayout()
+        self.inputField_Label_3 = QLabel()
+        self.inputField_Data_3 = QLineEdit()
+        self.inputField4 = QHBoxLayout()
+        self.inputField_Label_4 = QLabel()
+        self.inputField_Data_4 = QLineEdit()
+        self.inputField5 = QHBoxLayout()
+        self.inputField_Label_5 = QLabel()
+        self.inputField_Data_5 = QLineEdit()
+
+        Labels = ["First player name", "Second player name", "Number of sets to play", "Number of legs to play", "Number of points to score"]
+        print(len(Labels))
+        self.inputField_Label_1.setText(Labels[0])
+        self.inputField1.addWidget(self.inputField_Label_1)
+        self.inputField1.addWidget(self.inputField_Data_1)
+        self.generalLayout.addLayout(self.inputField1)
+        self.inputField_Label_2.setText(Labels[1])
+        self.inputField2.addWidget(self.inputField_Label_2)
+        self.inputField2.addWidget(self.inputField_Data_2)
+        self.generalLayout.addLayout(self.inputField2)
+        self.inputField_Label_3.setText(Labels[2])
+        self.inputField3.addWidget(self.inputField_Label_3)
+        self.inputField3.addWidget(self.inputField_Data_3)
+        self.generalLayout.addLayout(self.inputField3)
+        self.inputField_Label_4.setText(Labels[3])
+        self.inputField4.addWidget(self.inputField_Label_4)
+        self.inputField4.addWidget(self.inputField_Data_4)
+        self.generalLayout.addLayout(self.inputField4)
+        self.inputField_Label_5.setText(Labels[4])
+        self.inputField5.addWidget(self.inputField_Label_5)
+        self.inputField5.addWidget(self.inputField_Data_5)
+        self.generalLayout.addLayout(self.inputField5)
 
 def main():
     """Main function."""
     scoreboard = QApplication(sys.argv)
-    view = mainWindow()
+    #view = mainWindow()
+    view = dialogWindow()
     view.show()
-    dialog = dialogWindow()
+    #dialog = dialogWindow()
     sys.exit(scoreboard.exec_())
 
 if __name__ == "__main__":
