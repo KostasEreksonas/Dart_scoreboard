@@ -55,6 +55,15 @@ class calculateResults():
         points -= score
         return points
 
+
+#  ------------
+# | User Input |
+#  ------------
+class userInput():
+    def __init__(self):
+        self.player1 = player1
+        self.player2 = player2
+
     def namePlayer1(player1):
         player1 = input("Enter name of player 1:")
         return player1
@@ -62,6 +71,14 @@ class calculateResults():
     def namePlayer2(player2):
         player2 = input("Enter name of player 2:")
         return player2
+
+    def legCount(legNumber):
+        legNumber = input("Number of legs to play:")
+        return legNumber
+
+    def legCount(setNumber):
+        setNumber = input("Number of sets to play:")
+        return setNumber
 
 
 #  -------------
