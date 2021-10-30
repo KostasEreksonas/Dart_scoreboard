@@ -7,6 +7,7 @@ Table of Contents
 * [Graphical Dart Scoreboard](#Graphical-Dart-Scoreboard)
 * [Current Version](#Current-Version)
 * [Previous Versions](#Previous-Versions)
+* [What to Implement](#What-to-Implement)
 
 # Current Version
 
@@ -17,3 +18,14 @@ Code for the current version of the graphical dart scoreboard can be found [by f
 Previous versions of the graphical dart scoreboard can be found [in the ***Previous versions*** folder](/GUI/Previous_versions). List of the previous versions of the graphical dart scoreboard is as follows:
 
 1. [Graphical dart scoreboard v0.1](/GUI/Previous_versions/Graphical_dart_scoreboard_v_0_1.py)
+
+# What to Implement
+
+There I will provide a list of things that I plan to implement to the graphical dart scoreboard:
+
+1. Create `Max` function for counting maximum score of a 3-dart throw.
+2. Create `Average` function for counting average score of a 3-dart throw.
+3. Create separate functions for displaying stats on the Main Window.
+4. Connect Dialog Window's user input fields to the functions of `userInput` class.
+5. Display user input on the Main Window.
+6. Update Main Window when data changes.
