@@ -42,27 +42,27 @@ class calculateResults():
         return c100
 
     def count140(self, c140):
-        if (score >= 140) and (score < 179):
+        if (self.score >= 140) and (self.score < 179):
             c140 += 1
         return c140
 
     def count180(self, c180):
-        if (score == 180):
+        if (self.score == 180):
             c180 += 1
         return c180
 
     def countLeg(self, leg):
-        if (score == 0):
+        if (self.score == 0):
             leg += 1
         return leg
 
-    def countSet(legCurrent, legWin):
+    def countSet(legCurrent, legWin, sets):
         if (legCurrent == legWin):
-            set += 1
-        return set
+            sets1 += 1
+        return sets
 
     def pointsLeft(self, points):
-        points -= score
+        points -= self.score
         return points
 
 
@@ -113,7 +113,8 @@ class mainWindow(QMainWindow):
         self.heading.setText("Dart scoreboard")
         self.heading.setReadOnly(True)
         self.generalLayout.addWidget(self.heading)
-        displayText = ["", "Player1", "Player2", "Sets won", "0", "0", "Legs won", "0", "0", "Points left", "0", "0", "Points scored", "0", "0", "100+", "0", "0", "140+", "0", "0", "180s", "0", "0", "Max score", "0", "0","Average score", "0", "0"]
+        calc = calculateResults(101)
+        displayText = ["", "Player1", "Player2", "Sets won", calc.countSet(0,0), calc.countSet(0,0), "Legs won", calc.countLeg(0), calc.countLeg(0), "Points left", calc.pointsLeft(0), calc.pointsLeft(0), "Points scored", "0", "0", "100+", calc.count100(0), calc.count100(0), "140+", calc.count140(0), calc.count140(0), "180s", calc.count180(0), calc.count180(0), "Max score", "0", "0","Average score", "0", "0"]
         displayBoxes = []
         for i in range(len(displayText)//3+1):
             for j in range(3):
@@ -129,55 +130,55 @@ class mainWindow(QMainWindow):
                     self.generalLayout.addLayout(self.boxLayout)
                 if i == 2:
                     displayBoxes.append(self.textBox)
-                    self.textBox.setText(displayText[j+3])
+                    self.textBox.setText(str(displayText[j+3]))
                     for l in range(len(displayBoxes)-3):
                         self.boxLayout.addWidget(displayBoxes[l+3])
                     self.generalLayout.addLayout(self.boxLayout)
                 if i == 3:
                     displayBoxes.append(self.textBox)
-                    self.textBox.setText(displayText[j+6])
+                    self.textBox.setText(str(displayText[j+6]))
                     for l in range(len(displayBoxes)-6):
                         self.boxLayout.addWidget(displayBoxes[l+6])
                     self.generalLayout.addLayout(self.boxLayout)
                 if i == 4:
                     displayBoxes.append(self.textBox)
-                    self.textBox.setText(displayText[j+9])
+                    self.textBox.setText(str(displayText[j+9]))
                     for l in range(len(displayBoxes)-9):
                         self.boxLayout.addWidget(displayBoxes[l+9])
                     self.generalLayout.addLayout(self.boxLayout)
                 if i == 5:
                     displayBoxes.append(self.textBox)
-                    self.textBox.setText(displayText[j+12])
+                    self.textBox.setText(str(displayText[j+12]))
                     for l in range(len(displayBoxes)-12):
                         self.boxLayout.addWidget(displayBoxes[l+12])
                     self.generalLayout.addLayout(self.boxLayout)
                 if i == 6:
                     displayBoxes.append(self.textBox)
-                    self.textBox.setText(displayText[j+15])
+                    self.textBox.setText(str(displayText[j+15]))
                     for l in range(len(displayBoxes)-15):
                         self.boxLayout.addWidget(displayBoxes[l+15])
                     self.generalLayout.addLayout(self.boxLayout)
                 if i == 7:
                     displayBoxes.append(self.textBox)
-                    self.textBox.setText(displayText[j+18])
+                    self.textBox.setText(str(displayText[j+18]))
                     for l in range(len(displayBoxes)-18):
                         self.boxLayout.addWidget(displayBoxes[l+18])
                     self.generalLayout.addLayout(self.boxLayout)
                 if i == 8:
                     displayBoxes.append(self.textBox)
-                    self.textBox.setText(displayText[j+21])
+                    self.textBox.setText(str(displayText[j+21]))
                     for l in range(len(displayBoxes)-21):
                         self.boxLayout.addWidget(displayBoxes[l+21])
                     self.generalLayout.addLayout(self.boxLayout)
                 if i == 9:
                     displayBoxes.append(self.textBox)
-                    self.textBox.setText(displayText[j+24])
+                    self.textBox.setText(str(displayText[j+24]))
                     for l in range(len(displayBoxes)-24):
                         self.boxLayout.addWidget(displayBoxes[l+24])
                     self.generalLayout.addLayout(self.boxLayout)
                 if i == 10:
                     displayBoxes.append(self.textBox)
-                    self.textBox.setText(displayText[j+27])
+                    self.textBox.setText(str(displayText[j+27]))
                     for l in range(len(displayBoxes)-27):
                         self.boxLayout.addWidget(displayBoxes[l+27])
                     self.generalLayout.addLayout(self.boxLayout)
@@ -207,40 +208,43 @@ class dialogWindow(QDialog):
         self.dialogButtons()
 
     def inputFields(self):
-        self.inputField1 = QHBoxLayout()
-        self.inputField_Label_1 = QLabel()
-        self.inputField_Data_1 = QLineEdit()
-        self.inputField2 = QHBoxLayout()
-        self.inputField_Label_2 = QLabel()
-        self.inputField_Data_2 = QLineEdit()
-        self.inputField3 = QHBoxLayout()
-        self.inputField_Label_3 = QLabel()
-        self.inputField_Data_3 = QLineEdit()
-        self.inputField4 = QHBoxLayout()
-        self.inputField_Label_4 = QLabel()
-        self.inputField_Data_4 = QLineEdit()
-        self.inputField5 = QHBoxLayout()
-        self.inputField_Label_5 = QLabel()
-        self.inputField_Data_5 = QLineEdit()
-
         Labels = ["First player name", "Second player name", "Number of sets to play", "Number of legs to play", "Number of points to score"]
 
+        self.inputField1 = QHBoxLayout()
+        self.inputField_Label_1 = QLabel()
         self.inputField_Label_1.setText(Labels[0])
+        self.inputField_Data_1 = QLineEdit()
         self.inputField1.addWidget(self.inputField_Label_1)
         self.inputField1.addWidget(self.inputField_Data_1)
         self.generalLayout.addLayout(self.inputField1)
+
+        self.inputField2 = QHBoxLayout()
+        self.inputField_Label_2 = QLabel()
         self.inputField_Label_2.setText(Labels[1])
+        self.inputField_Data_2 = QLineEdit()
         self.inputField2.addWidget(self.inputField_Label_2)
         self.inputField2.addWidget(self.inputField_Data_2)
         self.generalLayout.addLayout(self.inputField2)
+
+        self.inputField3 = QHBoxLayout()
+        self.inputField_Label_3 = QLabel()
         self.inputField_Label_3.setText(Labels[2])
+        self.inputField_Data_3 = QLineEdit()
         self.inputField3.addWidget(self.inputField_Label_3)
         self.inputField3.addWidget(self.inputField_Data_3)
         self.generalLayout.addLayout(self.inputField3)
+
+        self.inputField4 = QHBoxLayout()
+        self.inputField_Label_4 = QLabel()
         self.inputField_Label_4.setText(Labels[3])
+        self.inputField_Data_4 = QLineEdit()
         self.inputField4.addWidget(self.inputField_Label_4)
         self.inputField4.addWidget(self.inputField_Data_4)
         self.generalLayout.addLayout(self.inputField4)
+
+        self.inputField5 = QHBoxLayout()
+        self.inputField_Label_5 = QLabel()
+        self.inputField_Data_5 = QLineEdit()
         self.inputField_Label_5.setText(Labels[4])
         self.inputField5.addWidget(self.inputField_Label_5)
         self.inputField5.addWidget(self.inputField_Data_5)
