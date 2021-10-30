@@ -33,37 +33,67 @@ from PyQt5.QtWidgets import QPushButton
 # | Calculations |
 #  --------------
 class calculateResults():
-    def __init__(self, score):
-        self.score = score
+    def __init__(self, score_1, score_2):
+        self.score_1 = score_1
+        self.score_2 = score_2
 
-    def count100(self, c100):
-        if (self.score >= 100) and (self.score < 140):
-            c100 += 1
-        return c100
+    def count100(self, c100_1):
+        if (self.score_1 >= 100) and (self.score_1 < 140):
+            c100_1 += 1
+        return c100_1
 
-    def count140(self, c140):
-        if (self.score >= 140) and (self.score < 179):
-            c140 += 1
-        return c140
+    def count100(self, c100_2):
+        if (self.score_2 >= 100) and (self.score_2 < 140):
+            c100_2 += 1
+        return c100_2
 
-    def count180(self, c180):
-        if (self.score == 180):
-            c180 += 1
-        return c180
+    def count140(self, c140_1):
+        if (self.score_1 >= 140) and (self.score_1 < 179):
+            c140_1 += 1
+        return c140_1
 
-    def countLeg(self, leg):
-        if (self.score == 0):
-            leg += 1
-        return leg
+    def count140(self, c140_2):
+        if (self.score_2 >= 140) and (self.score_2 < 179):
+            c140_2 += 1
+        return c140_2
 
-    def countSet(legCurrent, legWin, sets):
-        if (legCurrent == legWin):
-            sets1 += 1
-        return sets
+    def count180(self, c180_1):
+        if (self.score1 == 180):
+            c180_1 += 1
+        return c180_1
 
-    def pointsLeft(self, points):
-        points -= self.score
-        return points
+    def count180(self, c180_2):
+        if (self.score2 == 180):
+            c180_2 += 1
+        return c180_2
+
+    def countLeg(self, leg_1):
+        if (self.score_1 == 0):
+            leg_1 += 1
+        return leg_1
+
+    def countLeg(self, leg_2):
+        if (self.score_2 == 0):
+            leg_2 += 1
+        return leg_2
+
+    def countSet(legCurrent_1, legWin_1, sets_1):
+        if (legCurrent_1 == legWin_1):
+            sets_1 += 1
+        return sets_1
+
+    def countSet(legCurrent_2, legWin_2, sets_2):
+        if (legCurrent_2 == legWin_2):
+            sets_2 += 1
+        return sets_2
+
+    def pointsLeft(self, points_1):
+        points_1 -= self.score_1
+        return points_1
+
+    def pointsLeft1(self, points_2):
+        points_2 -= self.score_2
+        return points_2
 
 
 #  ------------
