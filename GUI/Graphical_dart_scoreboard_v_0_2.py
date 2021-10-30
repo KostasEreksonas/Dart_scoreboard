@@ -70,17 +70,17 @@ class calculateResults():
 # | User Input |
 #  ------------
 class userInput():
-    def __init__(self):
+    def __init__(self, player1, player2):
         self.player1 = player1
         self.player2 = player2
 
-    def namePlayer1(player1):
-        player1 = input("Enter name of player 1:")
-        return player1
+    def namePlayer1(self):
+        self.player1 = input("Enter name of player 1:")
+        return self.player1
 
-    def namePlayer2(player2):
-        player2 = input("Enter name of player 2:")
-        return player2
+    def namePlayer2(self):
+        self.player2 = input("Enter name of player 2:")
+        return self.player2
 
     def legCount(legNumber):
         legNumber = input("Number of legs to play:")
@@ -114,7 +114,18 @@ class mainWindow(QMainWindow):
         self.heading.setReadOnly(True)
         self.generalLayout.addWidget(self.heading)
         calc = calculateResults(101)
-        displayText = ["", "Player1", "Player2", "Sets won", calc.countSet(0,0), calc.countSet(0,0), "Legs won", calc.countLeg(0), calc.countLeg(0), "Points left", calc.pointsLeft(0), calc.pointsLeft(0), "Points scored", "0", "0", "100+", calc.count100(0), calc.count100(0), "140+", calc.count140(0), calc.count140(0), "180s", calc.count180(0), calc.count180(0), "Max score", "0", "0","Average score", "0", "0"]
+        displayText = [
+                "", "Player1", "Player2",
+                "Sets won", calc.countSet(0,0), calc.countSet(0,0),
+                "Legs won", calc.countLeg(0), calc.countLeg(0),
+                "Points left", calc.pointsLeft(0), calc.pointsLeft(0),
+                "Points scored", "0", "0",
+                "100+", calc.count100(0), calc.count100(0),
+                "140+", calc.count140(0), calc.count140(0),
+                "180s", calc.count180(0), calc.count180(0),
+                "Max score", "0", "0",
+                "Average score", "0", "0"
+        ]
         displayBoxes = []
         for i in range(len(displayText)//3+1):
             for j in range(3):
@@ -208,7 +219,13 @@ class dialogWindow(QDialog):
         self.dialogButtons()
 
     def inputFields(self):
-        Labels = ["First player name", "Second player name", "Number of sets to play", "Number of legs to play", "Number of points to score"]
+        Labels = [
+                "First player name",
+                "Second player name",
+                "Number of sets to play",
+                "Number of legs to play",
+                "Number of points to score"
+        ]
 
         self.inputField1 = QHBoxLayout()
         self.inputField_Label_1 = QLabel()
