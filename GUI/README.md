@@ -23,9 +23,11 @@ Previous versions of the graphical dart scoreboard can be found [in the ***Previ
 
 There I will provide a list of things that I plan to implement to the graphical dart scoreboard:
 
-1. Create `Max` function for counting maximum score of a 3-dart throw.
-2. Create `Average` function for counting average score of a 3-dart throw.
-3. Create separate functions for displaying stats on the Main Window.
-4. Connect Dialog Window's user input fields to the functions of `userInput` class.
-5. Display user input on the Main Window.
-6. Update Main Window when data changes.
+1. Comment the code.
+2. Create separate classes for various stat counts.
+3. Create `Max` function for counting maximum score of a 3-dart throw.
+4. Create `Average` function for counting average score of a 3-dart throw.
+5. Create separate functions for displaying stats on the Main Window.
+6. Connect Dialog Window's user input fields to the functions of `userInput` class.
+7. Display user input on the Main Window.
+8. Update Main Window when data changes.
