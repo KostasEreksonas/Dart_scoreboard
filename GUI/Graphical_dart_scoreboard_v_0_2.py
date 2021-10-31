@@ -33,67 +33,107 @@ from PyQt5.QtWidgets import QPushButton
 # | Calculations |
 #  --------------
 class calculateResults():
-    def __init__(self, score_1, score_2):
+    def __init__(self, score_1, score_2, c100_1, c100_2, c140_1, c140_2, c180_1, c180_2, legs_1, legs_2, sets_1, sets_2, legCurrent_1, legCurrent_2, legWin_1, legWin_2, points_1, points_2):
         self.score_1 = score_1
         self.score_2 = score_2
+        self.c100_1 = c100_1
+        self.c100_2 = c100_2
+        self.c140_1 = c140_1
+        self.c140_2 = c140_2
+        self.c180_1 = c180_1
+        self.c180_2 = c180_2
+        self.legs_1 = legs_1
+        self.legs_2 = legs_2
+        self.sets_1 = sets_1
+        self.sets_2 = sets_2
+        self.legCurrent_1 = legCurrent_1
+        self.legCurrent_2 = legCurrent_2
+        self.legWin_1 = legWin_1
+        self.legWin_2 = legWin_2
+        self.points_1 = points_1
+        self.points_2 = points_2
 
     def count1001(self, c100_1):
         if (self.score_1 >= 100) and (self.score_1 < 140):
-            c100_1 += 1
-        return c100_1
+            self.c100_1 += 1
+
+    def getCount1001(self):
+        return self.c100_1
 
     def count1002(self, c100_2):
         if (self.score_2 >= 100) and (self.score_2 < 140):
-            c100_2 += 1
-        return c100_2
+            self.c100_2 += 1
+
+    def getCount1002(self):
+        return self.c100_2
 
     def count1401(self, c140_1):
         if (self.score_1 >= 140) and (self.score_1 < 179):
-            c140_1 += 1
-        return c140_1
+            self.c140_1 += 1
+
+    def getCount1401(self):
+        return self.c140_1
 
     def count1402(self, c140_2):
         if (self.score_2 >= 140) and (self.score_2 < 179):
-            c140_2 += 1
-        return c140_2
+            self.c140_2 += 1
+
+    def getCount1402(self):
+        return self.c140_2
 
     def count1801(self, c180_1):
         if (self.score1 == 180):
-            c180_1 += 1
-        return c180_1
+            self.c180_1 += 1
+
+    def getCount1801(self):
+        return self.c180_1
 
     def count1802(self, c180_2):
         if (self.score2 == 180):
-            c180_2 += 1
-        return c180_2
+            self.c180_2 += 1
 
-    def countLeg1(self, leg_1):
+    def getCount1802(self):
+        return self.c180_2
+
+    def countLegs1(self, legs_1):
         if (self.score_1 == 0):
-            leg_1 += 1
-        return leg_1
+            self.legs_1 += 1
 
-    def countLeg2(self, leg_2):
+    def getLegs1(self):
+        return self.legs_1
+
+    def countLegs2(self, legs_2):
         if (self.score_2 == 0):
-            leg_2 += 1
-        return leg_2
+            self.legs_2 += 1
 
-    def countSet1(legCurrent_1, legWin_1, sets_1):
+    def getLegs2(self):
+        return self.legs_2
+
+    def countSets1(legCurrent_1, legWin_1, sets_1):
         if (legCurrent_1 == legWin_1):
-            sets_1 += 1
-        return sets_1
+            self.sets_1 += 1
 
-    def countSet2(legCurrent_2, legWin_2, sets_2):
+    def getSets1(self):
+        return self.sets_1
+
+    def countSets2(legCurrent_2, legWin_2, sets_2):
         if (legCurrent_2 == legWin_2):
-            sets_2 += 1
-        return sets_2
+            self.sets_2 += 1
+
+    def getSets2(self):
+        return self.sets_2
 
     def pointsLeft1(self, points_1):
-        points_1 -= self.score_1
-        return points_1
+        self.points_1 -= self.score_1
+
+    def getPoints1(self):
+        return self.points_1
 
     def pointsLeft2(self, points_2):
-        points_2 -= self.score_2
-        return points_2
+        self.points_2 -= self.score_2
+
+    def getPoints2(self):
+        return self.points_2
 
     def countMax1(self):
         pass
@@ -155,16 +195,16 @@ class mainWindow(QMainWindow):
         self.heading.setText("Dart scoreboard")
         self.heading.setReadOnly(True)
         self.generalLayout.addWidget(self.heading)
-        calc = calculateResults(101)
+        calc = calculateResults(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
         displayText = [
                 "", "Player1", "Player2",
-                "Sets won", calc.countSet(0,0), calc.countSet(0,0),
-                "Legs won", calc.countLeg(0), calc.countLeg(0),
-                "Points left", calc.pointsLeft(0), calc.pointsLeft(0),
-                "Points scored", "0", "0",
-                "100+", calc.count100(0), calc.count100(0),
-                "140+", calc.count140(0), calc.count140(0),
-                "180s", calc.count180(0), calc.count180(0),
+                "Sets won", calc.getSets1(), calc.getSets2(),
+                "Legs won", calc.getLegs1(), calc.getLegs2(),
+                "Points left", "0", "0",
+                "Points scored", calc.getPoints1(), calc.getPoints2(),
+                "100+", calc.getCount1001(), calc.getCount1002(),
+                "140+", calc.getCount1401(), calc.getCount1402(),
+                "180s", calc.getCount1801(), calc.getCount1802(),
                 "Max score", "0", "0",
                 "Average score", "0", "0"
         ]
