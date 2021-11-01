@@ -312,7 +312,8 @@ class dialogWindow(QDialog):
         self.inputField1 = QHBoxLayout()
         self.inputField_Label_1 = QLabel()
         self.inputField_Label_1.setText(Labels[0])
-        self.inputField_Data_1 = QLineEdit()
+        self.inputField_Data_1 = QLineEdit(self)
+        print(self.inputField_Data_1.text())
         self.inputField1.addWidget(self.inputField_Label_1)
         self.inputField1.addWidget(self.inputField_Data_1)
         self.generalLayout.addLayout(self.inputField1)
@@ -353,8 +354,16 @@ class dialogWindow(QDialog):
         QBtn = QDialogButtonBox.Ok | QDialogButtonBox.Cancel
         self.buttonBox = QDialogButtonBox(QBtn)
         self.buttonBox.accepted.connect(self.accept)
+        self.buttonBox.accepted.connect(self.onClick)
         self.buttonBox.rejected.connect(self.reject)
         self.generalLayout.addWidget(self.buttonBox)
+
+    def onClick(self):
+        print(self.inputField_Data_1.text())
+        print(self.inputField_Data_2.text())
+        print(self.inputField_Data_3.text())
+        print(self.inputField_Data_4.text())
+        print(self.inputField_Data_5.text())
 
 
 def main():
