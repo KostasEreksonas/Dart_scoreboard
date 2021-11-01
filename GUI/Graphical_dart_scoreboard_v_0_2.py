@@ -144,7 +144,7 @@ class calculateResults():
     def countAverage1(self):
         pass
 
-    def countAverage1(self):
+    def countAverage2(self):
         pass
 
 
