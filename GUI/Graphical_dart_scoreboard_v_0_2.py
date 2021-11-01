@@ -144,7 +144,7 @@ class calculateResults():
     def countAverage1(self):
         pass
 
-    def countAverage1(self):
+    def countAverage2(self):
         pass
 
 
@@ -383,11 +383,11 @@ class dialogWindow(QDialog):
         in_4 = self.inputField_Data_4.text()
         in_5 = self.inputField_Data_5.text()
         user_input = userInput(in_1,in_2,in_3,in_4,in_5)
-        #print(user_input.getName1())
-        #print(user_input.getName2())
-        #print(user_input.getLeg())
-        #print(user_input.getSet())
-        #print(user_input.getPoints())
+        print(user_input.getName1())
+        print(user_input.getName2())
+        print(user_input.getLeg())
+        print(user_input.getSet())
+        print(user_input.getPoints())
 
 def main():
     """Main function."""
