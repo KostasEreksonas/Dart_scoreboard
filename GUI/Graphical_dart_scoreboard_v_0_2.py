@@ -214,8 +214,9 @@ class mainWindow(QMainWindow):
         self.generalLayout.addWidget(self.heading)
         calc = calculateResults(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
         userInfo = userInput("Name1","Name2",0,0,0)
+        dlg = dialogWindow()
         displayText = [
-                "", userInfo.getName1(), userInfo.getName2(),
+                "", dlg.input1(), dlg.input2(),
                 "Sets won", calc.getSets1(), calc.getSets2(),
                 "Legs won", calc.getLegs1(), calc.getLegs2(),
                 "Points left", calc.getPoints1(), calc.getPoints2(),
@@ -302,7 +303,8 @@ class mainWindow(QMainWindow):
 
     def callDialog(self):
         self.Dialog = dialogWindow().exec_()
-
+        self.createWindow()
+        self.startButton()
 
 #  ---------------
 # | Dialog window |
@@ -330,8 +332,8 @@ class dialogWindow(QDialog):
         self.inputField1 = QHBoxLayout()
         self.inputField_Label_1 = QLabel()
         self.inputField_Label_1.setText(Labels[0])
-        self.inputField_Data_1 = QLineEdit(self)
-        print(self.inputField_Data_1.text())
+        self.inputField_Data_1 = QLineEdit()
+        self.inputField_Data_1.setText("Player1")
         self.inputField1.addWidget(self.inputField_Label_1)
         self.inputField1.addWidget(self.inputField_Data_1)
         self.generalLayout.addLayout(self.inputField1)
@@ -340,6 +342,7 @@ class dialogWindow(QDialog):
         self.inputField_Label_2 = QLabel()
         self.inputField_Label_2.setText(Labels[1])
         self.inputField_Data_2 = QLineEdit()
+        self.inputField_Data_2.setText("Player2")
         self.inputField2.addWidget(self.inputField_Label_2)
         self.inputField2.addWidget(self.inputField_Data_2)
         self.generalLayout.addLayout(self.inputField2)
@@ -372,22 +375,37 @@ class dialogWindow(QDialog):
         QBtn = QDialogButtonBox.Ok | QDialogButtonBox.Cancel
         self.buttonBox = QDialogButtonBox(QBtn)
         self.buttonBox.accepted.connect(self.accept)
-        self.buttonBox.accepted.connect(self.onClick)
+        self.buttonBox.accepted.connect(self.input1)
+        self.buttonBox.accepted.connect(self.input2)
+        self.buttonBox.accepted.connect(self.input3)
+        self.buttonBox.accepted.connect(self.input4)
+        self.buttonBox.accepted.connect(self.input5)
         self.buttonBox.rejected.connect(self.reject)
         self.generalLayout.addWidget(self.buttonBox)
 
-    def onClick(self):
+    def input1(self):
         in_1 = self.inputField_Data_1.text()
+        return in_1
+
+    def input2(self):
         in_2 = self.inputField_Data_2.text()
+        return in_2
+
+    def input3(self):
         in_3 = self.inputField_Data_3.text()
+        return in_3
+
+    def input4(self):
         in_4 = self.inputField_Data_4.text()
+        return in_4
+
+    def input5(self):
         in_5 = self.inputField_Data_5.text()
-        user_input = userInput(in_1,in_2,in_3,in_4,in_5)
-        #print(user_input.getName1())
-        #print(user_input.getName2())
-        #print(user_input.getLeg())
-        #print(user_input.getSet())
-        #print(user_input.getPoints())
+        return in_5
+
+    def updateInput(input1,input2,input3,input4,input5):
+        user_input = userInput(input1,input2,input3,input4,input5)
+
 
 def main():
     """Main function."""
@@ -395,6 +413,7 @@ def main():
     view = mainWindow()
     view.show()
     dialog = dialogWindow()
+    print(dialog.input1())
     sys.exit(scoreboard.exec_())
 
 if __name__ == "__main__":
