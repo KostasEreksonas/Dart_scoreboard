@@ -26,6 +26,8 @@ Features of this version are:
 4. Count an average score of 3-dart throws made.
 5. Count stats - ammount of times of scored 100's 140's and 180's.
 
+More information about CLI version can be fount [here](/CLI/README.md).
+
 # GUI Version
 
 Features of this version are:
@@ -43,6 +45,8 @@ Next is the sketch of a ***Dialog*** window, which is used for collecting user i
 ![Sketch of a dialog for user input](/img/score_calculator_Dialog_sketch.png)
 
 Also I have added a [.drawio file for calculator's Dialog scheme](/schemes/score_calculator_Dialog_sketch.drawio) in a [schemes](/schemes/) folder.
+
+More information about GUI version can be found [here](/GUI/README.md).
 
 # Further Work
 
