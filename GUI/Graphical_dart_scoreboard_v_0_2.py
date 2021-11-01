@@ -27,7 +27,7 @@ from PyQt5.QtWidgets import QPushButton
 #  ---------
 # | Classes |
 #  ---------
-"""In this section I will define classes for the program"""
+"""In this section I will define classes for the scoreboard"""
 
 #  --------------
 # | Calculations |
@@ -152,25 +152,42 @@ class calculateResults():
 # | User Input |
 #  ------------
 class userInput():
-    def __init__(self, player1, player2):
+    def __init__(self, player1, player2, legsNumber, setsNumber, points):
         self.player1 = player1
         self.player2 = player2
+        self.legsNumber = legsNumber
+        self.setsNumber = setsNumber
+        self.points = points
 
     def namePlayer1(self):
         self.player1 = input("Enter name of player 1:")
+
+    def getName1(self):
         return self.player1
 
     def namePlayer2(self):
         self.player2 = input("Enter name of player 2:")
+
+    def getName2(self):
         return self.player2
 
-    def legCount(legNumber):
-        legNumber = input("Number of legs to play:")
-        return legNumber
+    def legCount(self):
+        self.legsNumber = input("Number of legs to play:")
 
-    def legCount(setNumber):
-        setNumber = input("Number of sets to play:")
-        return setNumber
+    def getLeg(self):
+        return self.legsNumber
+
+    def setCount(self):
+        self.setsNumber = input("Number of sets to play:")
+
+    def getSet(self):
+        return self.setsNumber
+
+    def pointsCount(self):
+        self.points = input("How many points to score:")
+
+    def getPoints(self):
+        return self.points
 
 
 #  -------------
@@ -196,12 +213,13 @@ class mainWindow(QMainWindow):
         self.heading.setReadOnly(True)
         self.generalLayout.addWidget(self.heading)
         calc = calculateResults(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        userInfo = userInput("Name1","Name2",0,0,0)
         displayText = [
-                "", "Player1", "Player2",
+                "", userInfo.getName1(), userInfo.getName2(),
                 "Sets won", calc.getSets1(), calc.getSets2(),
                 "Legs won", calc.getLegs1(), calc.getLegs2(),
-                "Points left", "0", "0",
-                "Points scored", calc.getPoints1(), calc.getPoints2(),
+                "Points left", calc.getPoints1(), calc.getPoints2(),
+                "Points scored", "0", "0",
                 "100+", calc.getCount1001(), calc.getCount1002(),
                 "140+", calc.getCount1401(), calc.getCount1402(),
                 "180s", calc.getCount1801(), calc.getCount1802(),
@@ -359,12 +377,17 @@ class dialogWindow(QDialog):
         self.generalLayout.addWidget(self.buttonBox)
 
     def onClick(self):
-        print(self.inputField_Data_1.text())
-        print(self.inputField_Data_2.text())
-        print(self.inputField_Data_3.text())
-        print(self.inputField_Data_4.text())
-        print(self.inputField_Data_5.text())
-
+        in_1 = self.inputField_Data_1.text()
+        in_2 = self.inputField_Data_2.text()
+        in_3 = self.inputField_Data_3.text()
+        in_4 = self.inputField_Data_4.text()
+        in_5 = self.inputField_Data_5.text()
+        user_input = userInput(in_1,in_2,in_3,in_4,in_5)
+        #print(user_input.getName1())
+        #print(user_input.getName2())
+        #print(user_input.getLeg())
+        #print(user_input.getSet())
+        #print(user_input.getPoints())
 
 def main():
     """Main function."""
