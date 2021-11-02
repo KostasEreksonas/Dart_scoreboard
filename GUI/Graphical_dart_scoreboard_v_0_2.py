@@ -333,7 +333,7 @@ class dialogWindow(QDialog):
         self.inputField_Label_1 = QLabel()
         self.inputField_Label_1.setText(Labels[0])
         self.inputField_Data_1 = QLineEdit()
-        self.inputField_Data_1.setText("Player1")
+        self.inputField_Data_1.setText(self.input1())
         self.inputField1.addWidget(self.inputField_Label_1)
         self.inputField1.addWidget(self.inputField_Data_1)
         self.generalLayout.addLayout(self.inputField1)
@@ -342,7 +342,7 @@ class dialogWindow(QDialog):
         self.inputField_Label_2 = QLabel()
         self.inputField_Label_2.setText(Labels[1])
         self.inputField_Data_2 = QLineEdit()
-        self.inputField_Data_2.setText("Player2")
+        self.inputField_Data_2.setText(self.input2())
         self.inputField2.addWidget(self.inputField_Label_2)
         self.inputField2.addWidget(self.inputField_Data_2)
         self.generalLayout.addLayout(self.inputField2)
@@ -384,7 +384,7 @@ class dialogWindow(QDialog):
         self.generalLayout.addWidget(self.buttonBox)
 
     def input1(self):
-        in_1 = self.inputField_Data_1.text()
+        in_1 = str(self.inputField_Data_1.text())
         return in_1
 
     def input2(self):
@@ -413,7 +413,6 @@ def main():
     view = mainWindow()
     view.show()
     dialog = dialogWindow()
-    print(dialog.input1())
     sys.exit(scoreboard.exec_())
 
 if __name__ == "__main__":
